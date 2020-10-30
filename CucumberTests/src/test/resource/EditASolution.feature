@@ -1,32 +1,34 @@
-Feature: Assign Student
-  AS an Admin
-  I want to assign an Student/User to an class
+Feature: Edit a solution
+  AS a Teacher or Student
+  I want to edit an Solution for an specific Task
 
-  Scenario Outline: Add Student to class
+  Scenario Outline: Edit a Solution
     Given : The user is logged in
-    Given : User is an Admin
-    Given : The user is on the Updatepage of the Adminpanel
-    When : I choose an <class> out of an Dropdownmenu with the id 'classes_menu'
-    Then : <class> Updatepage opens
-    When : I enter <studentname> into input field with the id 'studentname_input'
-    And : I click the button 'Add to Class' with the buttonid 'add_to_Class'
+    Given : User is a Teacher or Student
+    Given : User is in a Group
+    Given : Teacher is assigned to a Class
+    Given : User has a open Task
+    Given : The user is on the Editpage of the Task
+    When : I edit the current Solution
+    And : I click the button 'Save' with the buttonid 'save_solution'
     Then : <status>-Popup with <message>
 
     Examples:
-      | class     | studentname | status | message |
-      | TINF19B4  | Nico        | OK     | Student added to class |
-      | TINF19B5  | NULL        | ERROR  | Error : Student not found |
+      | status | message |
+      | OK     | Student added to class |
+      | ERROR  | Error : Student not found |
 
   Scenario: Good Case
     Given : The user is logged in
-    Given : User is an Admin
-    Given : The user is on the Updatepage of the Adminpanel
-    When : I choose an <class> out of an Dropdownmenu with the id 'classes_menu'
-    Then : <class> Updatepage opens
-    When : I enter <studentname> into input field with the id 'studentname_input'
-    And : I click the button 'Add to Class' with the buttonid 'add_to_Class'
-    Then : "OK" Message
-    Then : Redirected to the updatepage
+    Given : User is a Teacher or Student
+    Given : User is in a Group
+    Given : Teacher is assigned to a Class
+    Given : User has a open Task
+    Given : The user is on the Editpage of the Task
+    When : I edit the current Solution
+    And : I click the button 'Save' with the buttonid 'save_solution'
+    Then : "Ok"-Popup with <message>
+    And : I get redirected to the specific Task Page
 
   Scenario: Bad Case
     Given : The user is logged in
@@ -37,4 +39,4 @@ Feature: Assign Student
     When : I enter <studentname> into input field with the id 'studentname_input'
     And : I click the button 'Add to Class' with the buttonid 'add_to_Class'
     Then : "Error" Message
-    Then : Redirected to the updatepage
+    And : I get redirected to the specific Task Page
