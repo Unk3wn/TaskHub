@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CucumberTests/CucumberTests.iml" filepath="$PROJECT_DIR$/CucumberTests/CucumberTests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Frontend/Frontend.iml" filepath="$PROJECT_DIR$/Frontend/Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TaskHub---Codebase.iml" filepath="$PROJECT_DIR$/.idea/TaskHub---Codebase.iml" />
+    </modules>
+  </component>
+</project>
