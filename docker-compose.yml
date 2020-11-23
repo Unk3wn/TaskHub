@@ -1,9 +1,12 @@
+#ports : HOST:CONTAINER
 version: "3.7"
 services:
-  postgres:
+
+  # Database with Postgres
+  database:
     image: postgres:${POSTGRES_VERSION}
     restart: always
-    container_name: Database
+    container_name: PostgreSQL
     env_file:
       - .env
     environment:
@@ -14,7 +17,9 @@ services:
     volumes:
       - ${POSTGRES_PATH}:/var/lib/postgresql/data
     ports:
-      - 5432:${POSTGRES_LISTEN_PORT}
+      - ${POSTGRES_LISTEN_PORT}:5432
+
+  # PGAdmin to Administrate the DB
   pgadmin:
     image: dpage/pgadmin4
     container_name: PGAdmin
@@ -26,8 +31,33 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
       PGADMIN_LISTEN_PORT: ${PGADMIN_LISTEN_PORT}
     ports:
-      - 8080:${PGADMIN_LISTEN_PORT}
+      - ${PGADMIN_PORT}:80
     volumes:
       - ${PGADMIN_PATH}:/var/lib/pgadmin
     links:
-      - "postgres:db"
+      - "database:db"
+
+  #Backend with Node.js and Express
+  backend:
+    build: ./2_Backend_Node.js
+    container_name: "Node.js"
+    ports:
+      - ${EXPRESS_PORT}:3000
+    volumes:
+      - ${EXPRESS_PATH}:/usr/src/app
+    links:
+      - "database:db"
+    depends_on:
+      - database
+
+  #Angular CLI Building + Deployment
+  frontend:
+    build: ./3_Frontend_Angular.js
+    container_name: "Angular"
+    ports:
+      - ${ANGULAR_PORT}:80
+    links:
+      - "database:db"
+    depends_on:
+      - database
+      - backend

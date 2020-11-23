@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "secret",
+    "database": "TaskHub",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "admin",
+    "password": "secret",
+    "database": "TaskHub",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "admin",
+    "password": "secret",
+    "database": "TaskHub",
+    "host": "db",
+    "dialect": "postgres"
+  }
+}
