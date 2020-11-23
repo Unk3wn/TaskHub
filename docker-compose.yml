@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:${POSTGRES_VERSION}
+    restart: always
+    container_name: Database
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: ${POSTGRES_PGDATA}
+    volumes:
+      - ${POSTGRES_PATH}:/var/lib/postgresql/data
+    ports:
+      - 5432:${POSTGRES_LISTEN_PORT}
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: PGAdmin
+    restart: always
+    env_file:
+      - .env
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+      PGADMIN_LISTEN_PORT: ${PGADMIN_LISTEN_PORT}
+    ports:
+      - 8080:${PGADMIN_LISTEN_PORT}
+    volumes:
+      - ${PGADMIN_PATH}:/var/lib/pgadmin
+    links:
+      - "postgres:db"
