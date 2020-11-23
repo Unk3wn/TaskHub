@@ -1,5 +1,7 @@
 version: "3.7"
 services:
+
+  # Database with Postgres
   postgres:
     image: postgres:${POSTGRES_VERSION}
     restart: always
@@ -15,6 +17,8 @@ services:
       - ${POSTGRES_PATH}:/var/lib/postgresql/data
     ports:
       - 5432:${POSTGRES_LISTEN_PORT}
+
+  # PGAdmin to Administrate the DB
   pgadmin:
     image: dpage/pgadmin4
     container_name: PGAdmin
@@ -29,5 +33,16 @@ services:
       - 8080:${PGADMIN_LISTEN_PORT}
     volumes:
       - ${PGADMIN_PATH}:/var/lib/pgadmin
+    links:
+      - "postgres:db"
+
+  #Backend with Node.js and Express
+  backend:
+    build: ./Backend
+    container_name: Backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - /Code/Backend:/usr/src/app
     links:
       - "postgres:db"
