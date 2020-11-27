@@ -2,22 +2,22 @@
   "development": {
     "username": "admin",
     "password": "secret",
-    "database": "TaskHub",
-    "host": "db",
+    "database": "TaskHub_DEV",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
     "username": "admin",
     "password": "secret",
-    "database": "TaskHub",
-    "host": "db",
+    "database": "TaskHub_TEST",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "admin",
     "password": "secret",
-    "database": "TaskHub",
-    "host": "db",
+    "database": "TaskHub_PROD",
+    "host": "localhost",
     "dialect": "postgres"
   }
 }

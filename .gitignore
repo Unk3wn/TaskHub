@@ -1,6 +1,5 @@
 target
-/.idea/
-/Code.iml
-*/node_modules
 /Docker
-/1_Database_PostgreSQL/1_Database_PostgreSQL.iml
+/.idea/
+*/node_modules
+*.iml
