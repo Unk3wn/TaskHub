@@ -17,18 +17,17 @@ module.exports = (sequelize, DataTypes) => {
     userID: {
       type: DataTypes.UUID,
       allowNull: false,
-      defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
     username:{
       type: DataTypes.STRING(30),
       unique: true
     },
-    FirstName: {
+    firstName: {
       type: DataTypes.STRING(30),
       allowNull: false
     },
-    LastName: {
+    lastName: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
@@ -42,5 +41,6 @@ module.exports = (sequelize, DataTypes) => {
     schema: 'public',
     tableName: 'user',
   });
+
   return user;
 };

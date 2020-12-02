@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "Recreate DB": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
+    "Push Seed": "npx sequelize-cli db:seed:all",
+    "Remove Seeds": "npx sequelize-cli db:seed:undo:all",
     "Create Migrations for Models": "makemigration --name <name>",
     "Preview Migration without any Changes": "makemigration --preview",
     "Create and EXECUTE Migration": "makemigration --name initial -x",
@@ -20,6 +22,7 @@
     "pg-hstore": "^2.3.3",
     "pug": "^3.0.0",
     "sequelize": "^6.3.5",
-    "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba"
+    "sequelize-auto-migrations": "^1.0.3",
+    "uuid": "^8.3.1"
   }
 }
