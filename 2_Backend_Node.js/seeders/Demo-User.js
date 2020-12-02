@@ -61,6 +61,14 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }])
+
+    await queryInterface.bulkInsert('mapping_class_task', [{
+      mappingID: uuidv4.v4(),
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      classID: classID,
+      taskID: taskID
+    }])
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -75,5 +83,6 @@ module.exports = {
     await queryInterface.bulkDelete('class', null, {});
     await queryInterface.bulkDelete('team', null, {});
     await queryInterface.bulkDelete('task', null, {});
+    await queryInterface.bulkDelete('mapping_class_task', null, {});
   }
 };
