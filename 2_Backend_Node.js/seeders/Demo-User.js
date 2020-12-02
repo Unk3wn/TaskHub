@@ -24,6 +24,17 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }])
+
+    await queryInterface.bulkInsert('userCredentials', [{
+      credentialID: uuidv4.v4(),
+      password: 'Llama20',
+      passwordSalt: 'Patrick',
+      isTeacher: false,
+      isAdmin: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      userID: userID
+    }])
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -33,5 +44,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('user', null, {});
+    await queryInterface.bulkDelete('userCredentials', null, {});
   }
 };
