@@ -62,6 +62,16 @@ module.exports = {
       updatedAt: new Date()
     }])
 
+    await queryInterface.bulkInsert('solution', [{
+      solutionID: uuidv4.v4(),
+      solution: 'Done',
+      mark: '3',
+      team: teamID,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      task: taskID
+    }])
+
     await queryInterface.bulkInsert('mapping_class_task', [{
       mappingID: uuidv4.v4(),
       createdAt: new Date(),
@@ -97,6 +107,7 @@ module.exports = {
     await queryInterface.bulkDelete('mapping_user_team', null, {});
     await queryInterface.bulkDelete('mapping_user_class', null, {});
     await queryInterface.bulkDelete('mapping_class_task', null, {});
+    await queryInterface.bulkDelete('solution', null, {});
     await queryInterface.bulkDelete('task', null, {});
     await queryInterface.bulkDelete('team', null, {});
     await queryInterface.bulkDelete('class', null, {});
