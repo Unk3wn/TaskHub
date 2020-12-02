@@ -14,9 +14,10 @@ module.exports = {
     */
 
     const userID = uuidv4.v4()
-    const classID = uuidv4.v4()
-    const teamID = uuidv4.v4()
-    const taskID = uuidv4.v4()
+    const classID = '3d66260b-8a6c-4643-8e50-4a74a90c3f39'
+    const teamID = '6328d4b9-5ce8-4ffa-a33d-9ca2ecb29927'
+    const taskID = '02f2ca2a-ff74-4ee5-8b54-96bea33ae30e'
+    const teacherID = '166685c6-28f4-468e-8cbe-c7a7609951e3'
 
     await queryInterface.bulkInsert('user',[{
       userID: userID,
@@ -39,13 +40,6 @@ module.exports = {
       userID: userID
     }])
 
-    await queryInterface.bulkInsert('class', [{
-      classID: classID,
-      label: 'TInf19B4',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    }])
-
     await queryInterface.bulkInsert('team', [{
       teamID: teamID,
       name: 'LlamaGroup',
@@ -53,13 +47,6 @@ module.exports = {
       updatedAt: new Date(),
       leader: userID,
       class: classID
-    }])
-
-    await queryInterface.bulkInsert('task', [{
-      taskID: taskID,
-      task: 'Rechnerarchitektur lernen',
-      createdAt: new Date(),
-      updatedAt: new Date()
     }])
 
     await queryInterface.bulkInsert('solution', [{
