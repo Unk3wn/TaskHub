@@ -21,7 +21,7 @@ module.exports = {
 
     await queryInterface.bulkInsert('user',[{
       userID: teacherID,
-      username: 'test2',
+      username: 'Demo-Teacher',
       firstName: 'Henning',
       lastName: 'Sextro',
       eMail: 'test2@mueller-patrick.tech',

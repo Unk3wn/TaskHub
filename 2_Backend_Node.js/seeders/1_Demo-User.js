@@ -17,11 +17,10 @@ module.exports = {
     const classID = '3d66260b-8a6c-4643-8e50-4a74a90c3f39'
     const teamID = '6328d4b9-5ce8-4ffa-a33d-9ca2ecb29927'
     const taskID = '02f2ca2a-ff74-4ee5-8b54-96bea33ae30e'
-    const teacherID = '166685c6-28f4-468e-8cbe-c7a7609951e3'
 
     await queryInterface.bulkInsert('user',[{
       userID: userID,
-      username: 'test1',
+      username: 'Demo-User-1',
       firstName: 'Patrick',
       lastName: 'Müller',
       eMail: 'test@mueller-patrick.tech',
