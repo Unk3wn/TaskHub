@@ -77,6 +77,14 @@ module.exports = {
       userID: userID,
       classID: classID
     }])
+
+    await queryInterface.bulkInsert('mapping_user_team', [{
+      mappingID: uuidv4.v4(),
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      userID: userID,
+      teamID: teamID
+    }])
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -86,12 +94,13 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('user', null, {});
-    await queryInterface.bulkDelete('userCredentials', null, {});
-    await queryInterface.bulkDelete('class', null, {});
-    await queryInterface.bulkDelete('team', null, {});
-    await queryInterface.bulkDelete('task', null, {});
-    await queryInterface.bulkDelete('mapping_class_task', null, {});
+    await queryInterface.bulkDelete('mapping_user_team', null, {});
     await queryInterface.bulkDelete('mapping_user_class', null, {});
+    await queryInterface.bulkDelete('mapping_class_task', null, {});
+    await queryInterface.bulkDelete('task', null, {});
+    await queryInterface.bulkDelete('team', null, {});
+    await queryInterface.bulkDelete('class', null, {});
+    await queryInterface.bulkDelete('userCredentials', null, {});
+    await queryInterface.bulkDelete('user', null, {});
   }
 };
