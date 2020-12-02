@@ -23,6 +23,14 @@ module.exports = (sequelize, DataTypes) => {
     task: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    teacher: {
+      type: DataTypes.UUID,
+      allowNull: true,
+      references: {
+        model: 'user',
+        key: 'userID'
+      }
     }
   }, {
     sequelize,
