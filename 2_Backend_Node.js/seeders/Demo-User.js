@@ -15,6 +15,7 @@ module.exports = {
 
     const userID = uuidv4.v4()
     const classID = uuidv4.v4()
+    const teamID = uuidv4.v4()
 
     await queryInterface.bulkInsert('user',[{
       userID: userID,
@@ -42,6 +43,15 @@ module.exports = {
       label: 'TInf19B4',
       createdAt: new Date(),
       updatedAt: new Date(),
+    }])
+
+    await queryInterface.bulkInsert('team', [{
+      teamID: teamID,
+      name: 'LlamaGroup',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      leader: userID,
+      class: classID
     }])
   },
 
