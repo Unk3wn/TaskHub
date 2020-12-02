@@ -16,6 +16,7 @@ module.exports = {
     const userID = uuidv4.v4()
     const classID = uuidv4.v4()
     const teamID = uuidv4.v4()
+    const taskID = uuidv4.v4()
 
     await queryInterface.bulkInsert('user',[{
       userID: userID,
@@ -53,6 +54,13 @@ module.exports = {
       leader: userID,
       class: classID
     }])
+
+    await queryInterface.bulkInsert('task', [{
+      taskID: taskID,
+      task: 'Rechnerarchitektur lernen',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }])
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -64,5 +72,8 @@ module.exports = {
      */
     await queryInterface.bulkDelete('user', null, {});
     await queryInterface.bulkDelete('userCredentials', null, {});
+    await queryInterface.bulkDelete('class', null, {});
+    await queryInterface.bulkDelete('team', null, {});
+    await queryInterface.bulkDelete('task', null, {});
   }
 };
