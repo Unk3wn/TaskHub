@@ -14,6 +14,7 @@ module.exports = {
     */
 
     const userID = uuidv4.v4()
+    const classID = uuidv4.v4()
 
     await queryInterface.bulkInsert('user',[{
       userID: userID,
@@ -34,6 +35,13 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       userID: userID
+    }])
+
+    await queryInterface.bulkInsert('class', [{
+      classID: classID,
+      label: 'TInf19B4',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     }])
   },
 
