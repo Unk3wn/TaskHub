@@ -11,4 +11,3 @@ All Credentials are stored in the .env config file!
 You can Backup the Database inside the Docker Container very easy!
 1. copy the created File from :   
     "Docker\PGAdmin\storage" to   
-    "Database/Backup" to get it into VCS
