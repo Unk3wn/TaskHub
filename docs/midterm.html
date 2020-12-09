@@ -298,11 +298,94 @@
 						<h2>2.3 Backend</h2>
 					</section>
 					<section>
-						<h2>Sneek Preview</h2>
-						<img src="ressources/frontend.png">
+						<h2>Architecture of our Data</h2>
+						<img src="ressources/backend_architecture.png">
+					</section>
+					<section>
+						<h2>Docker Architecture</h2>
+						<img src="ressources/backend_docker.png">
 					</section>
 					<section>
 						<h2>&#128161; Live Demo</h2>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">Example Model</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							'use strict';
+							const {
+							  Model
+							} = require('sequelize');
+							module.exports = (sequelize, DataTypes) => {
+							  ...
+							};
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">Example Model</h2>
+						<pre style="height:580px;" data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|2-7|4|5|9-14|10|11|12|13|15-18|16|17">
+							module.exports = (sequelize, DataTypes) => {
+							  class team extends Model {
+								static associate(models) {
+								  team.belongsTo(models.user,{foreignKey:'leader',as:'userID'})
+								  team.belongsTo(models.classe,{foreignKey:'class',as:'classID'})
+								}
+							  };
+							  team.init({
+								teamID: {
+								  type: DataTypes.UUID,
+								  allowNull: false,
+								  defaultValue: DataTypes.UUIDV4,
+								  primaryKey: true
+								},
+								name: {
+								  type: DataTypes.STRING(50),
+								  allowNull: false
+								}
+							  },
+							  ...
+							};
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">Example Model</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|8-11|9|10|11">
+							'use strict';
+							const {
+							  Model
+							} = require('sequelize');
+							module.exports = (sequelize, DataTypes) => {
+							  ...
+							  }, {
+								sequelize,
+								modelName: 'team',
+								schema: 'public',
+								tableName: 'team',
+							  });
+							  return team;
+							};
+						</code></pre>
+					</section>
+					<section>
+						<h2 data-id="code-title">Example Seed</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|1-8|">
+							await queryInterface.bulkInsert('user',[{
+							  userID: teacherID,
+							  username: 'Demo-Teacher',
+							  firstName: 'Henning',
+							  lastName: 'Sextro',
+							  eMail: 'test2@mueller-patrick.tech',
+							  createdAt: new Date(),
+							  updatedAt: new Date()
+							}])
+						</code></pre>
+					</section>
+					<section>
+						<h2>Still Open Points</h2>
+						<ol style="list-style-type: none">
+							<li>Fully Functional API</li>
+							<li>Sequelize Migrations</li>
+							<li>Better Seeds</li>
+						</ol>
 					</section>
 				</section>
 			</div>
@@ -345,19 +428,19 @@
 							<th scope="row">Kristin</th>
 							<td>Agne</td>
 							<td>agne.kristin@student.dhbw-karlsruhe.de</td>
-							<td style="text-align: right">~ 30</td>
+							<td style="text-align: right">~ 45</td>
 						</tr>
 						<tr>
-							<th class="table-info" scope="row" colspan="4" style="text-align: right">Project Management, Blog, Peer Reviews, YouTrack</th>
+							<th class="table-info" scope="row" colspan="4" style="text-align: right">Blog, Github Administration, Peer Review, Organisation</th>
 						</tr>
 						<tr>
 							<th scope="row">Danny</th>
 							<td>Kroll</td>
 							<td>kroll.danny@student.dhbw-karlsruhe.de</td>
-							<td style="text-align: right">~ 25</td>
+							<td style="text-align: right">~ 50</td>
 						</tr>
 						<tr>
-							<th class="table-info" scope="row" colspan="4" style="text-align: right">Angular Frontend, Peer Reviews, GIT</th>
+							<th class="table-info" scope="row" colspan="4" style="text-align: right">Angular Frontend, Youtrack, Project Management, Midterm Presentation</th>
 						</tr>
 						<tr>
 							<th scope="row">Nico</th>
@@ -366,7 +449,7 @@
 							<td style="text-align: right">~ 60</td>
 						</tr>
 						<tr>
-							<th class="table-info" scope="row" colspan="4" style="text-align: right">Management, Backend, Docker, Database, Infrastructure</th>
+							<th class="table-info" scope="row" colspan="4" style="text-align: right">Infrastructure, Backend, Docker, Database</th>
 						</tr>
 						</tbody>
 					</table>
@@ -396,14 +479,14 @@
 						}
 					</script>
 					<h2>Print Handout</h2>
-					<button type="button" class="btn btn-primary btn-lg" onclick="print('ressources/dummy.pdf')">Print me Hard</button>
+					<button type="button" class="btn btn-primary btn-lg" onclick="print('ressources/Handout.pdf')">Print Handout</button>
 				</section>
 			</div>
 			<div class="slides" id="endslide">
 				<section>
 					<h1 >Hope you enjoyed our <br> Presentation ❤️</h1>
 					<br>
-					<p>You can download our Handout here : <a href="">Klick me!</a> </p>
+					<p>You can download our Handout here : <a href="https://github.com/Unk3wn/TaskHub---Codebase/blob/Midterm/docs/ressources/Handout.pdf">Click me!</a> </p>
 					<br>
 					<br>
 					<p>Also feel free to look in our <a target="_blank" href="https://raw.githubusercontent.com/Unk3wn/TaskHub---Codebase/master/4_Midterm_Reveal.js/index.html">Presentation - Sourcecode</a> and <a target="_blank" href="https://revealjs.com/">reveal.js</a></p>
