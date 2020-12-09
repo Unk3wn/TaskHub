@@ -69,6 +69,10 @@
 				let headOfIT = "&#128081;"; // 👑
 				let buisnessClient = "&#128188;"; // 💼
 				let clientUser = "&#128118;"; // 👶
+
+				let krissiIcon = "&#128024;"; // 🐘
+				let nicoIcon = "&#129433;"; // 🦙
+				let dannyIcon = "&#128373;"; // 🕵️
 			</script>
 		</div>
 		<div class="reveal">
@@ -91,6 +95,11 @@
 					right : 10px;
 					font-size: 12px;
 				}
+				.persons{
+					position: absolute;
+					top: 20px;
+					left : 15px;
+				}
 				h1,h2,h3,h4,h5,h6{
 					padding-top: 2%;
 				}
@@ -103,6 +112,7 @@
 			<div id="troll" class='troll'></div>
 			<div id="header" class="header">
 			</div>
+			<div id="persons" class="persons"><script>document.write(nicoIcon)</script></div>
 			<!-- Slides -->
 			<div class="slides" id="introduction">
 				<!-- Introduction -->
@@ -164,6 +174,17 @@
 							<li><script>document.write(buisnessClient)</script> &#8594; Buisness Client</li>
 							<li><script>document.write(clientUser)</script> &#8594; Client User</li>
 						</ul>
+					</p>
+				</section>
+				<section>
+					<h3>Speaker</h3>
+					<p>
+						&#8598; Every Symbol stands for one Speaker
+					<ul style="list-style-type: none">
+						<li><script>document.write(nicoIcon)</script> &#8594; Nico Holzh&auml;user</li>
+						<li><script>document.write(krissiIcon)</script> &#8594; Kristin Agne</li>
+						<li><script>document.write(dannyIcon)</script> &#8594; Danny Kroll</li>
+					</ul>
 					</p>
 				</section>
 			</div>
@@ -488,7 +509,7 @@
 					<h2>Print your own Handout</h2>
 					<button type="button" class="btn btn-primary btn-lg" onclick="print('ressources/Handout.pdf')">Print Handout</button>
 					<br>
-					<p>Look at the FAQ's Top Right &#8599;</p>
+					<p>Look at the Printing Tems on Top Right &#8599;</p>
 				</section>
 			</div>
 			<div class="slides" id="endslide">
@@ -519,29 +540,41 @@
 					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 				});
 				Reveal.on( 'slidechanged', event => {
-					if(event.indexh == 3 || event.indexh == 5 && event.indexv == 1){
+					if(event.indexh == 3 || event.indexh == 6 && event.indexv == 1){
 						document.getElementById("header").innerHTML = maintainer+headOfIT+buisnessClient+clientUser;
 					}
-					if(event.indexh == 5 && event.indexv == 3 || event.indexh == 9){
+					if(event.indexh == 6 && event.indexv == 3 || event.indexh == 10){
 						document.getElementById("header").innerHTML = maintainer+headOfIT+buisnessClient;
 					}
-					if(event.indexh == 6 || event.indexh == 7 && event.indexv == 1){
+					if(event.indexh == 7 || event.indexh == 8 && event.indexv == 1){
 						document.getElementById("header").innerHTML = buisnessClient+headOfIT;
 					}
-					if(event.indexh == 10){
+					if(event.indexh == 11){
 						document.getElementById("header").innerHTML = maintainer+headOfIT+clientUser;
 					}
-					if(event.indexh == 11){
+					if(event.indexh == 12){
 						document.getElementById("header").innerHTML = maintainer+headOfIT;
 					}
-					if(event.indexh == 2 || event.indexh == 4 || event.indexh == 8 || event.indexh == 15){
+					if(event.indexh == 2 || event.indexh == 5 || event.indexh == 9 || event.indexh == 16){
 						document.getElementById("header").innerHTML = "";
 					}
-					if (event.indexh == 19){
-						document.getElementById("troll").innerHTML = "Today for only 99,99€";
+					if (event.indexh == 20){
+						document.getElementById("troll").innerHTML = 'Today for only 99,99€  and <br> your paper + ink + printer';
 					}
-					if (event.indexh == 20 || event.indexh == 18){
+					if (event.indexh == 21 || event.indexh == 19){
 						document.getElementById("troll").innerHTML = "";
+					}
+
+					//#####################################################
+
+					if (event.indexh == 4 || event.indexh == 12 && event.indexv >= 2 || event.indexh == 15){
+						document.getElementById("persons").innerHTML = nicoIcon;
+					}
+					if (event.indexh == 7 || event.indexh == 12 && event.indexv < 2 || event.indexh == 13){
+						document.getElementById("persons").innerHTML = krissiIcon;
+					}
+					if (event.indexh == 2 || event.indexh == 11 || event.indexh == 16){
+						document.getElementById("persons").innerHTML = dannyIcon;
 					}
 				} );
 			</script>
