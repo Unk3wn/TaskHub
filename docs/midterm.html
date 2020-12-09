@@ -85,6 +85,12 @@
 					top: 1em;
 					right : 1em;
 				}
+				.troll{
+					position: absolute;
+					top: 10px;
+					right : 10px;
+					font-size: 12px;
+				}
 				h1,h2,h3,h4,h5,h6{
 					padding-top: 2%;
 				}
@@ -94,27 +100,28 @@
 				10.12.2020 <br>
 				Nico Holzh&aumluser & Danny Kroll & Kristin Agne
 			</div>
+			<div id="troll" class='troll'></div>
 			<div id="header" class="header">
 			</div>
 			<!-- Slides -->
 			<div class="slides" id="introduction">
 				<!-- Introduction -->
 				<section>
-					<h2>Welcome to our Midterm - Presentation</h2>
+					<h2> ❤️Welcome to our<br> Midterm - Presentation</h2>
 					<p>
-						<img style="width: 30%" src="https://taskhub854228916.files.wordpress.com/2020/10/cropped-unknown-1-1.png">
+						<img style="width: 50%" src="./ressources/logo.png">
 					</p>
 				</section>
 				<!-- Disclaimer -->
 				<section>
 					<h2>Disclaimer</h2>
 					<p>
-						This Template was created by and for the Groups from <u><a href="https://taskhub854228916.wordpress.com/">TaskHub</a></u>, <u><a href="https://blog.betterzon.xyz">Betterzon</a></u> and <u><a href="https://blog.plantshub.de">PlantsHub</a></u>.
+						This Template was created <u>by and for</u> the Groups from <u><a href="https://taskhub854228916.wordpress.com/">TaskHub</a></u>, <u><a href="https://blog.betterzon.xyz">Betterzon</a></u> and <u><a href="https://blog.plantshub.de">PlantsHub</a></u>.
 					</p>
 				</section>
 				<!-- ToC -->
 				<section>
-					<h2 style="padding-top: 1%">Contents</h2>
+					<h2 style="padding-top: 1%"><a href="https://kay.fasten-your-seat-belts.de/my-courses/software-engineering/466-1146/">Contents</a></h2>
 					<ol type="1" style="font-size:60%;">
 						<li>Understand your business needs</li>
 						<ol>
@@ -381,11 +388,11 @@
 					</section>
 					<section>
 						<h2>Still Open Points</h2>
-						<ol style="list-style-type: none">
+						<ul style="">
 							<li>Fully Functional API</li>
 							<li>Sequelize Migrations</li>
 							<li>Better Seeds</li>
-						</ol>
+						</ul>
 					</section>
 				</section>
 			</div>
@@ -478,8 +485,10 @@
 							objFra.contentWindow.print();       // Print it.
 						}
 					</script>
-					<h2>Print Handout</h2>
+					<h2>Print your own Handout</h2>
 					<button type="button" class="btn btn-primary btn-lg" onclick="print('ressources/Handout.pdf')">Print Handout</button>
+					<br>
+					<p>Look at the FAQ's Top Right &#8599;</p>
 				</section>
 			</div>
 			<div class="slides" id="endslide">
@@ -527,6 +536,12 @@
 					}
 					if(event.indexh == 2 || event.indexh == 4 || event.indexh == 8 || event.indexh == 15){
 						document.getElementById("header").innerHTML = "";
+					}
+					if (event.indexh == 19){
+						document.getElementById("troll").innerHTML = "Today for only 99,99€";
+					}
+					if (event.indexh == 20 || event.indexh == 18){
+						document.getElementById("troll").innerHTML = "";
 					}
 				} );
 			</script>
