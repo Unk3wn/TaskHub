@@ -13,4 +13,12 @@ router.post('/api/role',roleController.add);
 router.put('/api/role/:id', roleController.update);
 router.delete('/api/role/:id', roleController.delete);
 
+const subjectController = require('../controllers').subject;
+router.get('/api/subject',subjectController.list);
+router.get('/api/subject/:id',subjectController.getById);
+router.post('/api/subject',subjectController.add);
+router.put('/api/subject/:id', subjectController.update);
+router.delete('/api/subject/:id', subjectController.delete);
+
+
 module.exports = router;

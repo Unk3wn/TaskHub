@@ -70,9 +70,19 @@ else if(process.env.NODE_ENV == "production"){
 
 module.exports = app;
 
+
 function initzialize(){
+
+  const roleID = "097ed6cc-657a-4c6d-9f0f-d4fadb1fced4";
+  const subjectID = "eb1a1ae0-35e2-47b7-919e-9042704f059b";
+
   db.role.create({
-    role_id: "097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
-    role_name: "Ich teste eine Rolle!"
+    role_id: roleID,
+    role_name: "Testrole"
   });
+
+  db.subject.create({
+    subject_id : subjectID,
+    subject_name : "Testsubject"
+  })
 }
