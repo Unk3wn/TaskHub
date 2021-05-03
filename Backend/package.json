@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "Initzialize Sequelize ": "sequelize init",
+    "Recreate DB": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
+    "Get Models from DB": "sequelize-auto -o \"./sequelize/models\" -d TaskHub_DEV -h localhost -u postgres -p 5432 -x postgres -e postgres",
+    "Push all Migrations to DB": "sequelize db:migrate",
+    "test1": "node ./node_modules/sequelize-auto-migrations/bin/makemigration --name class"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "pug": "2.0.0-beta11",
+    "sequelize": "^6.6.2",
+    "sequelize-auto": "^0.8.2",
+    "sequelize-auto-migrations": "^1.0.3",
+    "uuid": "^8.3.2"
+  }
+}

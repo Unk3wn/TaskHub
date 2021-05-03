@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Backend/Backend.iml" filepath="$PROJECT_DIR$/Backend/Backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/CucumberTests/CucumberTests.iml" filepath="$PROJECT_DIR$/CucumberTests/CucumberTests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Database/Database.iml" filepath="$PROJECT_DIR$/Database/Database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Docker/Docker.iml" filepath="$PROJECT_DIR$/Docker/Docker.iml" />
       <module fileurl="file://$PROJECT_DIR$/Frontend/Frontend.iml" filepath="$PROJECT_DIR$/Frontend/Frontend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/TaskHub---Codebase.iml" filepath="$PROJECT_DIR$/.idea/TaskHub---Codebase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Presentations/Presentations.iml" filepath="$PROJECT_DIR$/Presentations/Presentations.iml" />
     </modules>
   </component>
 </project>
