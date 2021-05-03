@@ -7,7 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Database/Database.iml" filepath="$PROJECT_DIR$/Database/Database.iml" />
       <module fileurl="file://$PROJECT_DIR$/Docker/Docker.iml" filepath="$PROJECT_DIR$/Docker/Docker.iml" />
       <module fileurl="file://$PROJECT_DIR$/Frontend/Frontend.iml" filepath="$PROJECT_DIR$/Frontend/Frontend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Presentations/Presentations.iml" filepath="$PROJECT_DIR$/Presentations/Presentations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/docs/docs.iml" filepath="$PROJECT_DIR$/docs/docs.iml" />
     </modules>
   </component>
 </project>
