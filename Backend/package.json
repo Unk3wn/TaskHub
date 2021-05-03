@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "Install": "npm install",
     "Initzialize Sequelize ": "sequelize init",
     "Recreate DB": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
     "Get Models from DB": "sequelize-auto -o \"./sequelize/models\" -d TaskHub_DEV -h localhost -u postgres -p 5432 -x postgres -e postgres",
