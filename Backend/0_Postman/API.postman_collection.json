@@ -10,6 +10,23 @@
 			"item": [
 				{
 					"name": "Get all Roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -30,6 +47,31 @@
 				},
 				{
 					"name": "Get Role by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json(); \r",
+									"pm.test(\"Check ID\", function () { \r",
+									"    pm.expect(jsonData[0].role_id).is.to.equal(\"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4\"); \r",
+									"});\r",
+									"pm.test(\"Check Name\", function () { \r",
+									"    pm.expect(jsonData[0].role_name).is.to.equal(\"Testrole\"); \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -373,10 +415,15 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"role_name\" : \"Testrole v2\"\r\n}"
+							"raw": "{\r\n    \"role_name\" : \"Testrole umbennennen\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
+							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -385,7 +432,7 @@
 							"path": [
 								"api",
 								"role",
-								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced3"
 							]
 						}
 					},
@@ -681,6 +728,599 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Role Not Found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Get all Classes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json(); \r",
+									"pm.test(\"Check ID\", function () { \r",
+									"    pm.expect(jsonData[0].role_id).is.to.equal(\"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4\"); \r",
+									"});\r",
+									"pm.test(\"Check Name\", function () { \r",
+									"    pm.expect(jsonData[0].role_name).is.to.equal(\"Testrole\"); \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"class",
+								"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Class by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"class",
+										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-He/xCi++TZ1fwRQPgOVFG/BKoCw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 May 2021 13:01:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"class_id\": \"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73\",\n    \"classname\": \"Testclass\"\n}"
+						},
+						{
+							"name": "Class by ID not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f72",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"class",
+										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f72"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-z1fvG4BDJV1Ate5InK5EoS/LwH0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 May 2021 13:01:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Class not Found!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Class",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role_name\" : \"Testrole v2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/role/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"role",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Class Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classname\" : \"Testclass v2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/class/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"class",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "78"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4e-NaST+v3zazuJlZc2DvQDzKticQ8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 May 2021 13:02:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"class_id\": \"0a7debbd-0f38-4e10-8d56-acc70467445d\",\n    \"classname\": \"Testclass v2\"\n}"
+						},
+						{
+							"name": "Not a valid Classname",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classname\" : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/class/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"class",
+										""
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15-CZ//1SZlKFG/Tm5DxqhwwRr92+A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 May 2021 13:03:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not a valid Classname"
+						}
+					]
+				},
+				{
+					"name": "Update a Class",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role_name\" : \"Testrole umbennennen\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"role",
+								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update a Class",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classname\" : \"Testrole umbennennen\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"class",
+										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-vaDZi/MWhU8xgbHLwHwhezbfsXs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 May 2021 13:04:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"class_id\": \"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73\",\n    \"classname\": \"Testrole umbennennen\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Role by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"role",
+								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete a Class",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"class",
+										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 May 2021 13:04:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
@@ -990,7 +1630,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/role/eb1a1ae0-35e2-47b7-919e-9042704f059b",
+							"raw": "http://localhost:8088/api/subject/eb1a1ae0-35e2-47b7-919e-9042704f059a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -998,8 +1638,8 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role",
-								"eb1a1ae0-35e2-47b7-919e-9042704f059b"
+								"subject",
+								"eb1a1ae0-35e2-47b7-919e-9042704f059a"
 							]
 						}
 					},
@@ -1156,7 +1796,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8088/api/subject/eb1a1ae0-35e2-47b7-919e-9042704f059b",
+							"raw": "http://localhost:8088/api/subject/eb1a1ae0-35e2-47b7-919e-9042704f059a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1165,7 +1805,7 @@
 							"path": [
 								"api",
 								"subject",
-								"eb1a1ae0-35e2-47b7-919e-9042704f059b"
+								"eb1a1ae0-35e2-47b7-919e-9042704f059a"
 							]
 						}
 					},
