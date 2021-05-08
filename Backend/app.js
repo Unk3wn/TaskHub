@@ -75,6 +75,7 @@ function initzialize(){
 
   const roleID = "097ed6cc-657a-4c6d-9f0f-d4fadb1fced4";
   const subjectID = "eb1a1ae0-35e2-47b7-919e-9042704f059b";
+    const classID = "7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73";
 
   db.role.create({
     role_id: roleID,
@@ -84,5 +85,10 @@ function initzialize(){
   db.subject.create({
     subject_id : subjectID,
     subject_name : "Testsubject"
-  })
+  });
+
+  db.klass.create({
+    class_id : classID,
+    classname : "Testclass"
+  });
 }

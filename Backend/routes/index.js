@@ -20,5 +20,11 @@ router.post('/api/subject',subjectController.add);
 router.put('/api/subject/:id', subjectController.update);
 router.delete('/api/subject/:id', subjectController.delete);
 
+const klassController = require('../controllers').klass;
+router.get('/api/class',klassController.list);
+router.get('/api/class/:id',klassController.getById);
+router.post('/api/class',klassController.add);
+router.put('/api/class/:id', klassController.update);
+router.delete('/api/class/:id', klassController.delete);
 
 module.exports = router;
