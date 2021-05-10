@@ -1,4 +1,5 @@
 const user = require('../sequelize/models').user;
+const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 
 module.exports = {
@@ -53,7 +54,7 @@ module.exports = {
             user.create({
                 user_id : uuid.v4(),
                 username : req.body.username,
-                password : req.body.password,
+                password : bcrypt.hashSync(req.body.password,10),
                 first_name : req.body.first_name,
                 last_name : req.body.last_name,
                 email : req.body.email
