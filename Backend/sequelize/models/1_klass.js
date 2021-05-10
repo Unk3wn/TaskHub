@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      klass.belongsToMany(models.task,{
+        through: 'A_Class_Task'
+      })
     }
   };
   klass.init({
