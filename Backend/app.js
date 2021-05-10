@@ -59,7 +59,7 @@ const db = require("./sequelize/models");
 
 //DEV
 if (process.env.NODE_ENV == "development"){
-  db.sequelize.sync({force: true}).then(() => {
+  db.sequelize.sync({force: true,logging: console.log}).then(() => {
     console.log('Drop and Resync Db');
     initzialize();
   });
@@ -102,7 +102,7 @@ function initzialize(){
     first_name : "Paddy",
     last_name : "Mueller",
     email : "test@bonk.army"
-  })
+  });
 
   db.task.create({
     task_id : taskID,
