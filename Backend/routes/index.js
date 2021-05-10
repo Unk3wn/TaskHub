@@ -41,4 +41,11 @@ router.post('/api/task',taskController.add);
 router.put('/api/task/:id', taskController.update);
 router.delete('/api/task/:id', taskController.delete);
 
+const teamController = require('../controllers').team;
+router.get('/api/team',teamController.list);
+router.get('/api/team/:id',teamController.getById);
+router.post('/api/team',teamController.add);
+router.put('/api/team/:id', teamController.update);
+router.delete('/api/team/:id', teamController.delete);
+
 module.exports = router;

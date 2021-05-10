@@ -87,7 +87,6 @@ module.exports = {
     },
 
     update(req,res){
-        console.log(req.body);
         return task
             .findByPk(req.params.id)
             .then((task) => {

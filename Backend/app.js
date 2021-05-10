@@ -79,6 +79,7 @@ function initzialize(){
   const classID = "7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73";
   const userID = "3f7bf944-7a3f-4648-bfec-29d8a5722895";
   const taskID = "a2fe481e-d186-47c1-a845-bdc182582321";
+  const teamID = "2c555866-05b6-42c6-b0dd-d27341bc61ad";
 
   db.role.create({
     role_id: roleID,
@@ -110,5 +111,12 @@ function initzialize(){
     question : "Wo is die BUDDA ?",
     class : classID,
     duedate : Date.now()
+  })
+
+  db.team.create({
+    team_id : teamID,
+    team_name : "Hagebacher",
+    team_leader : userID,
+    class_id : classID
   })
 }
