@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
       team.belongsTo(models.klass,{
         foreignKey: 'class_id'
       })
+      team.belongsTo(models.user,{
+        foreignKey: 'team_leader'
+      })
     }
   };
   team.init({

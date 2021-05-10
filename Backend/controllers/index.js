@@ -3,6 +3,7 @@ const subject = require('./subject');
 const klass = require('./klass');
 const user = require('./user');
 const task = require('./task');
+const team = require('./team');
 
 module.exports = {
     role,
@@ -10,4 +11,5 @@ module.exports = {
     klass,
     user,
     task,
+    team,
 };
