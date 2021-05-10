@@ -28,6 +28,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       primaryKey: true
     },
+    text : {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     time_ended: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
