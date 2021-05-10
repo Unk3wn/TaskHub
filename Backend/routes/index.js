@@ -48,4 +48,11 @@ router.post('/api/team',teamController.add);
 router.put('/api/team/:id', teamController.update);
 router.delete('/api/team/:id', teamController.delete);
 
+const solutionsController = require('../controllers').solution;
+router.get('/api/solution',solutionsController.list);
+router.get('/api/solution/:id',solutionsController.getById);
+router.post('/api/solution',solutionsController.add);
+router.put('/api/solution/:id', solutionsController.update);
+router.delete('/api/solution/:id', solutionsController.delete);
+
 module.exports = router;

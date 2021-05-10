@@ -80,6 +80,7 @@ function initzialize(){
   const userID = "3f7bf944-7a3f-4648-bfec-29d8a5722895";
   const taskID = "a2fe481e-d186-47c1-a845-bdc182582321";
   const teamID = "2c555866-05b6-42c6-b0dd-d27341bc61ad";
+  const solutionID = "00cb173c-ffd4-4f67-a190-bc2c41e9d5e3";
 
   db.role.create({
     role_id: roleID,
@@ -118,5 +119,16 @@ function initzialize(){
     team_name : "Hagebacher",
     team_leader : userID,
     class_id : classID
+  })
+
+  db.solution.create({
+    solution_id : solutionID,
+    text : "IM KÜHLSCHRANK",
+    time_ended : false,
+    reviewed : true,
+    marked : false,
+    mark : "A-",
+    task : taskID,
+    team : teamID
   })
 }
