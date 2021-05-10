@@ -98,12 +98,47 @@ module.exports = {
         }
     },
 
-    //TODO
     update(req,res){
-
+        return solution
+            .findByPk(req.params.id)
+            .then((solution) => {
+                if (!solution) {
+                    return res.status(404).send({
+                        message: 'Solution Not Found',
+                    });
+                }
+                return solution
+                    .update({
+                        text : req.body.text || task.text,
+                        time_ended: req.body.time_ended || task.time_ended,
+                        reviewed: req.body.reviewed || task.reviewed,
+                        marked: req.body.marked || task.marked,
+                        mark: req.body.mark || task.mark,
+                        task: req.body.task || task.task,
+                        team: req.body.team || task.team,
+                    })
+                    .then(() => res.status(200).send(solution))
+                    .catch((error) => res.status(400).send(error));
+            })
+            .catch((error) => res.status(400).send(error));
     },
 
     delete(req, res) {
-
+        return solution
+            .findByPk(req.params.id)
+            .then(solution => {
+                if (!solution) {
+                    return res.status(400).send({
+                        message: 'Solution Not Found',
+                    });
+                }
+                return solution
+                    .destroy()
+                    .then(() => res.status(200).send({
+                        message: "Solution ("+solution.solution_id+") was deleted succesfully!"
+                    }))
+                    .catch((error) => res.status(400).send(error));
+            })
+            .catch((error) => res.status(400).send(error));
     }
 }
