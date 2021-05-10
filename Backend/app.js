@@ -1,7 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var bodyParser = require('body-parser');
-var uuid = require('uuid');
+var bcrypt = require('bcryptjs');
 var dotenv = require('dotenv');
 dotenv.config();
 
@@ -56,14 +56,15 @@ app.use(function(err, req, res, next) {
 });
 
 const db = require("./sequelize/models");
-//PROD
+
+//DEV
 if (process.env.NODE_ENV == "development"){
-  db.sequelize.sync({force: true}).then(() => {
+  db.sequelize.sync({force: true,logging: console.log}).then(() => {
     console.log('Drop and Resync Db');
     initzialize();
   });
 }
-//DEV
+//PROD
 else if(process.env.NODE_ENV == "production"){
   db.sequelize.sync();
 }
@@ -77,6 +78,7 @@ function initzialize(){
   const subjectID = "eb1a1ae0-35e2-47b7-919e-9042704f059b";
   const classID = "7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73";
   const userID = "3f7bf944-7a3f-4648-bfec-29d8a5722895";
+  const taskID = "a2fe481e-d186-47c1-a845-bdc182582321";
 
   db.role.create({
     role_id: roleID,
@@ -96,9 +98,17 @@ function initzialize(){
   db.user.create({
     user_id : userID,
     username : "p4ddy",
-    password :"test1234",
+    password : bcrypt.hashSync("test",10),
     first_name : "Paddy",
     last_name : "Mueller",
     email : "test@bonk.army"
+  });
+
+  db.task.create({
+    task_id : taskID,
+    subject_id : subjectID,
+    question : "Wo is die BUDDA ?",
+    class : classID,
+    duedate : Date.now()
   })
 }

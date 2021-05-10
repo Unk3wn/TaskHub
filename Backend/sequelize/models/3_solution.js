@@ -1,6 +1,28 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('solution', {
+'use strict';
+const {
+  Model
+} = require('sequelize');
+
+module.exports = (sequelize, DataTypes) => {
+  class solution extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      solution.belongsTo(models.team,{
+        foreignKey: 'team',
+        as: 'team_id'
+      })
+      solution.belongsTo(models.task,{
+        foreignKey: 'task',
+        as: 'task_id'
+      })
+    }
+  };
+  solution.init({
     solution_id: {
       type: DataTypes.UUID,
       allowNull: false,
@@ -56,4 +78,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  return solution
 };

@@ -1,6 +1,29 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('user', {
+'use strict';
+const {
+  Model
+} = require('sequelize');
+
+module.exports = (sequelize, DataTypes) => {
+  class user extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      user.belongsToMany(models.role,{
+        through : 'A_User_Role'
+      })
+      user.belongsToMany(models.klass,{
+        through : 'A_User_Class'
+      })
+      user.belongsToMany(models.team,{
+        through : 'A_User_Team'
+      })
+    }
+  };
+  user.init({
     user_id: {
       type: DataTypes.UUID,
       allowNull: false,
@@ -48,4 +71,6 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  return user
 };
+
