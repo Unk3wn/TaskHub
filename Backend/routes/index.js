@@ -34,4 +34,11 @@ router.post('/api/user',userController.add);
 router.put('/api/user/:id', userController.update);
 router.delete('/api/user/:id', userController.delete);
 
+const taskController = require('../controllers').task;
+router.get('/api/task',taskController.list);
+router.get('/api/task/:id',taskController.getById);
+router.post('/api/task',taskController.add);
+router.put('/api/task/:id', taskController.update);
+router.delete('/api/task/:id', taskController.delete);
+
 module.exports = router;
