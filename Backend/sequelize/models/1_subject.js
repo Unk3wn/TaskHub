@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       subject.belongsToMany(models.task,{
-        through: 'SubjectForTasksTask'
+        through: 'A_Subject_Task'
       })
     }
   };
