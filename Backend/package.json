@@ -23,7 +23,7 @@
     "morgan": "~1.9.1",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
-    "pug": "2.0.0-beta11",
+    "pug": "^3.0.2",
     "sequelize": "^6.6.2",
     "sequelize-auto": "^0.8.2",
     "sequelize-auto-migrations": "^1.0.3",

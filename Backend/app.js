@@ -1,22 +1,21 @@
-var createError = require('http-errors');
-var express = require('express');
-var bodyParser = require('body-parser');
-var bcrypt = require('bcryptjs');
-var dotenv = require('dotenv');
+const createError = require('http-errors');
+const express = require('express');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcryptjs');
+const dotenv = require('dotenv');
 dotenv.config();
 
-var cors = require('cors');
-var corsOptions = {
+const cors = require('cors');
+const corsOptions = {
   origin: "http://localhost:"+process.env.PORT
 };
 
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-
-var app = express();
+const indexRouter = require('./routes/index');
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
