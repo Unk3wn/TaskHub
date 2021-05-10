@@ -1,6 +1,20 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('task_solution', {
+'use strict';
+const {
+  Model
+} = require('sequelize');
+
+module.exports = (sequelize, DataTypes) => {
+  class task_solution extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
+  };
+  task_solution.init({
     mapping_id: {
       type: DataTypes.UUID,
       allowNull: true
@@ -27,4 +41,5 @@ module.exports = function(sequelize, DataTypes) {
     schema: 'public',
     timestamps: false
   });
+  return task_solution
 };

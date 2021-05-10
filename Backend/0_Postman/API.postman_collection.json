@@ -31,7 +31,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8088/api/role",
+							"raw": "http://localhost:8088/api/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -39,7 +39,7 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role"
+								"user"
 							]
 						}
 					},
@@ -83,7 +83,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
+							"raw": "http://localhost:8088/api/user/3f7bf944-7a3f-4648-bfec-29d8a5722895",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -91,8 +91,8 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"class",
-								"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+								"user",
+								"3f7bf944-7a3f-4648-bfec-29d8a5722895"
 							]
 						}
 					},
@@ -240,7 +240,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"role_name\" : \"Testrole v2\"\r\n}",
+							"raw": "{\r\n    \"username\" : \"P4ddyV2\",\r\n    \"password\" : \"test\",\r\n    \"first_name\" : \"Patrick\",\r\n    \"last_name\" : \"Mueller 2\",\r\n    \"email\" : \"neu@bonk.army\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -248,7 +248,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/role/",
+							"raw": "http://localhost:8088/api/user/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -256,7 +256,7 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role",
+								"user",
 								""
 							]
 						}
@@ -639,7 +639,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced3",
+							"raw": "http://localhost:8088/api/user/3f7bf944-7a3f-4648-bfec-29d8a5722895",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -647,8 +647,8 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role",
-								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced3"
+								"user",
+								"3f7bf944-7a3f-4648-bfec-29d8a5722895"
 							]
 						}
 					},
@@ -1021,7 +1021,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
+							"raw": "http://localhost:8088/api/user/3f7bf944-7a3f-4648-bfec-29d8a5722895",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1029,8 +1029,8 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role",
-								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+								"user",
+								"3f7bf944-7a3f-4648-bfec-29d8a5722895"
 							]
 						}
 					},
@@ -1856,7 +1856,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8088/api/role",
+							"raw": "http://localhost:8088/api/class",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1864,7 +1864,7 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role"
+								"class"
 							]
 						}
 					},
@@ -2065,7 +2065,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"role_name\" : \"Testrole v2\"\r\n}",
+							"raw": "{\r\n    \"classname\" : \"Testrole v2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2073,7 +2073,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/role/",
+							"raw": "http://localhost:8088/api/class/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2081,7 +2081,7 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role",
+								"class",
 								""
 							]
 						}
@@ -2248,7 +2248,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced3",
+							"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2256,8 +2256,8 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role",
-								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced3"
+								"class",
+								"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
 							]
 						}
 					},
@@ -2337,12 +2337,12 @@
 					]
 				},
 				{
-					"name": "Delete Role by ID",
+					"name": "Delete Class by ID",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
+							"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2350,8 +2350,8 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"role",
-								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+								"class",
+								"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
 							]
 						}
 					},
