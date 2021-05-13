@@ -28,18 +28,16 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-console.log("["+date+" | "+time+"] Server started succesfully!");
 /**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port);
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 // Ausgabe des Ports
-console.log(`Backend-Server is running on port ${port}.`);
+console.log('['+date+' | '+time+'] Backend-Server is running on port '+port+'.');
 server.on('error', onError);
 server.on('listening', onListening);
 
