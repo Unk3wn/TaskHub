@@ -39,7 +39,7 @@ if (process.env.NODE_ENV == "development"){
   console.log('[SEQUELIZE] DEV MODE - DROPPING AND RECREATING DB');
   db.sequelize.sync({force: true,logging: console.log}).then(() => {
     db.sequelize.options.logging = true;
-    initzialize();
+    //initzialize();
   });
 }
 //PROD
@@ -60,22 +60,22 @@ function initzialize(){
   const teamID = "2c555866-05b6-42c6-b0dd-d27341bc61ad";
   const solutionID = "00cb173c-ffd4-4f67-a190-bc2c41e9d5e3";
 
-  db.role.create({
+  const role = db.role.create({
     role_id: roleID,
     role_name: "Testrole"
   });
 
-  db.subject.create({
+  const subject = db.subject.create({
     subject_id : subjectID,
     subject_name : "Testsubject"
   });
 
-  db.klass.create({
+  const klass = db.klass.create({
     class_id : classID,
     classname : "Testclass"
   });
 
-  db.user.create({
+  const user = db.user.create({
     user_id : userID,
     username : "p4ddy",
     password : bcrypt.hashSync("test",10),
@@ -84,7 +84,7 @@ function initzialize(){
     email : "test@bonk.army"
   });
 
-  db.task.create({
+  const task = db.task.create({
     task_id : taskID,
     subject_id : subjectID,
     question : "Wo is die BUDDA ?",
@@ -92,14 +92,14 @@ function initzialize(){
     duedate : Date.now()
   });
 
-  db.team.create({
+  const team = db.team.create({
     team_id : teamID,
     team_name : "Hagebacher",
     team_leader : userID,
     class_id : classID
   });
 
-  db.solution.create({
+  const solution = db.solution.create({
     solution_id : solutionID,
     text : "IM KÜHLSCHRANK",
     time_ended : false,
@@ -109,4 +109,7 @@ function initzialize(){
     task : taskID,
     team : teamID
   })
+
+
+
 }
