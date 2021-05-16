@@ -7,8 +7,7 @@
     "Install": "npm install",
     "Initzialize Sequelize ": "sequelize init",
     "Recreate DB": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
-    "Push all Migrations to DB": "sequelize db:migrate",
-    "test1": "node ./node_modules/sequelize-auto-migrations/bin/makemigration --name class"
+    "Seed Data": "npx sequelize-cli db:seed:all"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
