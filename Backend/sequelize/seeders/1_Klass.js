@@ -1,8 +1,6 @@
 'use strict';
 
-const bcrypt = require('bcryptjs');
-
-const constants = require('../config/constants');
+const seedingFactory = require('../seedingData/SeedingFactory')
 
 module.exports = {
     up: async (queryInterface, Sequelize) => {
@@ -15,10 +13,7 @@ module.exports = {
          *   isBetaMember: false
          * }], {});
          */
-        return queryInterface.bulkInsert('klass', [{
-            class_id : constants.classID,
-            classname : "Testclass"
-        }]);
+        return queryInterface.bulkInsert('klass', seedingFactory("Class"));
     },
 
     down: async (queryInterface, Sequelize) => {
