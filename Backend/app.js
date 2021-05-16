@@ -10,6 +10,7 @@ const express = require('express'),
 
 //===============PASSPORT===============
 
+
 //===============CORS===============
 const corsOptions = {
   origin: "http://localhost:"+process.env.PORT
@@ -35,8 +36,9 @@ app.use('/', indexRouter);
 const db = require("./sequelize/models");
 //DEV
 if (process.env.NODE_ENV == "development"){
+  console.log('[SEQUELIZE] DEV MODE - DROPPING AND RECREATING DB');
   db.sequelize.sync({force: true,logging: console.log}).then(() => {
-    console.log('Drop and Resync Db');
+    db.sequelize.options.logging = true;
     initzialize();
   });
 }
@@ -88,14 +90,14 @@ function initzialize(){
     question : "Wo is die BUDDA ?",
     class : classID,
     duedate : Date.now()
-  })
+  });
 
   db.team.create({
     team_id : teamID,
     team_name : "Hagebacher",
     team_leader : userID,
     class_id : classID
-  })
+  });
 
   db.solution.create({
     solution_id : solutionID,
