@@ -1,8 +1,7 @@
 'use strict';
 
 const bcrypt = require('bcryptjs');
-
-const constants = require('../config/constants');
+const seedingFactory = require('../seedingData/SeedingFactory')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -15,14 +14,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    return queryInterface.bulkInsert('user', [{
-      user_id : constants.userID,
-      username : "p4dd2y",
-      password : bcrypt.hashSync("test",10),
-      first_name : "Paddy",
-      last_name : "Mueller",
-      email : "test@bonk.army"
-    }]);
+    return queryInterface.bulkInsert('user', [seedingFactory("user")]);
   },
 
   down: async (queryInterface, Sequelize) => {
