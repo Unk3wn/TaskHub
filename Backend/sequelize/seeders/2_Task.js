@@ -18,7 +18,7 @@ module.exports = {
         return queryInterface.bulkInsert('task', [{
             task_id : constants.taskID,
             subject_id : constants.subjectID,
-            question : "Wo is die BUDDA ?",
+            question : "Wo is die BUDDAA ?",
             class : constants.classID,
             duedate : new Date
         }]);
