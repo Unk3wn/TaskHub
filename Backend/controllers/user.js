@@ -1,5 +1,7 @@
 const user = require('../sequelize/models').user;
 const role = require('../sequelize/models').role;
+const klass = require('../sequelize/models').klass;
+const team = require('../sequelize/models').team;
 const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 
@@ -20,7 +22,13 @@ module.exports = {
                     as: 'roles',
                     attributes: {
                         exclude: ["A_User_Role"]
-                    }
+                        }
+                    },{
+                        model: klass,
+                        as: 'klasses'
+                    },{
+                        model: team,
+                        as: 'teams'
                 }]
             })
             .then((user) => {
@@ -162,6 +170,66 @@ module.exports = {
                         user.addRole(role);
                         return res.status(201).send({
                             message : 'User '+user.username+' was added to Group '+role.role_name
+                        });
+                    })
+            })
+            .catch((error) => res.status(400).send(error))
+    },
+
+    addClassToUser(req,res){
+        return user
+            .findByPk(req.params.userID,{
+                include: [{
+                    model: klass,
+                    as: 'klasses'
+                }]
+            })
+            .then((user)=>{
+                if(!user){
+                    return res.status(404).send({
+                        message : 'User not found you Asshole!'
+                    });
+                }
+                klass.findByPk(req.params.classID)
+                    .then((klass) =>{
+                        if(!klass){
+                            return res.status(404).send({
+                                message : 'Class not found you Asshole!'
+                            });
+                        }
+                        user.addKlass(klass);
+                        return res.status(201).send({
+                            message : 'User '+user.username+' was added to Class '+klass.classname
+                        });
+                    })
+            })
+            .catch((error) => res.status(400).send(error))
+    },
+
+    addTeamToUser(req,res){
+        return user
+            .findByPk(req.params.userID,{
+                include: [{
+                    model: team,
+                    as: 'teams'
+                }]
+            })
+            .then((user)=>{
+                if(!user){
+                    return res.status(404).send({
+                        message : 'User not found you Asshole!'
+                    });
+                }
+                team.findByPk(req.params.teamID)
+                    .then((team) =>{
+                        if(!team){
+                            return res.status(404).send({
+                                message : 'Class not found you Asshole!'
+                            });
+                        }
+                        user.addTeam(team);
+                        return res.status(201).send({
+                            message : 'User '+user.username+' was added to Team '+team.team_name
                         });
                     })
             })
