@@ -13,7 +13,7 @@ const express = require('express'),
 
 //===============CORS===============
 const corsOptions = {
-  origin: "http://localhost:"+process.env.PORT
+  origin: "http://localhost:4200"
 };
 app.use(cors(corsOptions));
 
@@ -43,7 +43,7 @@ if (process.env.NODE_ENV == "development"){
   });
 }
 //PROD
-else if(process.env.NODE_ENV == "production"){
+else if(process.env.NODE_ENV == "production" || process.env.NODE_ENV == "test"){
   db.sequelize.options.logging = false;
   db.sequelize.sync();
 }
