@@ -2,17 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { AccountService } from '../_services/account.service';
+import {ApiService} from "../Services/api.service";
 
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
   users = null;
+  users2 = null;
 
-  constructor(private accountService: AccountService) {}
+  constructor(
+    private accountService: AccountService,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit() {
-    this.accountService.getAll()
-      .pipe(first())
-      .subscribe(users => this.users = users);
+
+    this.apiService.getUser().subscribe(users => this.users2 = users);
   }
 
   deleteUser(id: string) {
@@ -23,5 +27,9 @@ export class ListComponent implements OnInit {
       .subscribe(() => {
         this.users = this.users.filter(x => x.id !== id)
       });
+  }
+
+  getUser(): void {
+    this.apiService.getUser().subscribe(users => this.users2 = users);
   }
 }

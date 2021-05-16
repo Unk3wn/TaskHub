@@ -1,0 +1,21 @@
+<table>
+  <thead>
+  <tr>
+    <th>
+      Frage?
+    </th>
+  </tr>
+  </thead>
+  <tboday>
+    <tr *ngFor="let task of tasks">
+      <td>
+        {{task.question}}
+      </td>
+    </tr>
+  </tboday>
+</table>
+<mat-form-field class="example-full-width">
+  <mat-label>Leave a comment</mat-label>
+  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+</mat-form-field>
+<button mat-button color="primary">Primary</button>

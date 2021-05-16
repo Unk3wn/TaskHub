@@ -7,7 +7,7 @@ dotenv.config();
 
 var cors = require('cors');
 var corsOptions = {
-  origin: "http://localhost:"+process.env.PORT
+  origin: "http://localhost:4200"
 };
 
 var path = require('path');

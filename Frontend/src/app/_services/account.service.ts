@@ -57,7 +57,7 @@ export class AccountService {
     return this.http.put(`${environment.apiUrl}/users/${id}`, params)
       .pipe(map(x => {
         // update stored user if the logged in user updated their own record
-        if (id == this.userValue.id) {
+        if (id == this.userValue.user_id) {
           // update local storage
           const user = { ...this.userValue, ...params };
           localStorage.setItem('user', JSON.stringify(user));
@@ -73,7 +73,7 @@ export class AccountService {
     return this.http.delete(`${environment.apiUrl}/users/${id}`)
       .pipe(map(x => {
         // auto logout if the logged in user deleted their own record
-        if (id == this.userValue.id) {
+        if (id == this.userValue.user_id) {
           this.logout();
         }
         return x;
