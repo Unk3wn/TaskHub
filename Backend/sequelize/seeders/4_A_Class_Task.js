@@ -15,16 +15,11 @@ module.exports = {
          *   isBetaMember: false
          * }], {});
          */
-        return queryInterface.bulkInsert('team', [{
-            team_id : constants.teamID,
-            team_name : "Hagebacher",
-            team_leader : constants.userID,
-            class_id : constants.classID
-        }, {
-            team_id : constants.teamID2,
-            team_name : "Llamas",
-            team_leader : constants.userID2,
-            class_id : constants.classID
+        return queryInterface.bulkInsert('A_Class_Task', [{
+            createdAt: new Date,
+            updatedAt: new Date,
+            klassClassId: constants.classID,
+            taskTaskId: constants.taskID
         }]);
     },
 
@@ -35,7 +30,9 @@ module.exports = {
          * Example:
          * await queryInterface.bulkDelete('People', null, {});
          */
-        const Op = Sequelize.Op
-        return queryInterface.bulkDelete('team', {user_id: {[Op.in]: [constants.teamID, constants.teamID2]}}, {})
+        return queryInterface.bulkDelete('A_Class_Task', {
+            klassClassId: constants.classID,
+            taskTaskId: constants.taskID
+        })
     }
 };
