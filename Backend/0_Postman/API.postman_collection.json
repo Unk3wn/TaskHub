@@ -52,21 +52,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"var jsonData = pm.response.json(); \r",
-									"pm.test(\"Check ID\", function () { \r",
-									"    pm.expect(jsonData[0].role_id).is.to.equal(\"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4\"); \r",
-									"});\r",
-									"pm.test(\"Check Name\", function () { \r",
-									"    pm.expect(jsonData[0].role_name).is.to.equal(\"Testrole\"); \r",
-									"});\r",
-									"\r",
-									"pm.test(\"Response time is less than 200ms\", () => {\r",
-									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -240,7 +226,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"P4ddyV2\",\r\n    \"password\" : \"test\",\r\n    \"first_name\" : \"Patrick\",\r\n    \"last_name\" : \"Mueller 2\",\r\n    \"email\" : \"neu@bonk.army\"\r\n}",
+							"raw": "{\r\n    \"username\" : \"Krissi\",\r\n    \"password\" : \"Krissi123\",\r\n    \"first_name\" : \"Kristin\",\r\n    \"last_name\" : \"Agne\",\r\n    \"email\" : \"k.agne@bonk.army\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1099,6 +1085,105 @@
 							"body": "{\n    \"message\": \"User P4ddy'(2bac9120-db68-4d93-adb3-6a52d14ac4a8) was deleted succesfully!\"\n}"
 						}
 					]
+				},
+				{
+					"name": "Add User with Roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Krissi\",\r\n    \"password\" : \"Krissi123\",\r\n    \"first_name\" : \"Kristin\",\r\n    \"last_name\" : \"Agne\",\r\n    \"email\" : \"k.agne@bonk.army\",\r\n    \"roles\":{\r\n            \"role_id\": \"097ed6cc-657a-4c6d-9f0f-d4fadb1fced3\",\r\n            \"role_name\": \"Testroll with User created\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/user/WithRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"user",
+								"WithRoles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Role to User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/user/addRole/3f7bf944-7a3f-4648-bfec-29d8a5722895/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"user",
+								"addRole",
+								"3f7bf944-7a3f-4648-bfec-29d8a5722895",
+								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Class to User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/user/addRole/3f7bf944-7a3f-4648-bfec-29d8a5722895/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"user",
+								"addRole",
+								"3f7bf944-7a3f-4648-bfec-29d8a5722895",
+								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Team to User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/user/addTeam/3f7bf944-7a3f-4648-bfec-29d8a5722895/2c555866-05b6-42c6-b0dd-d27341bc61ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"user",
+								"addTeam",
+								"3f7bf944-7a3f-4648-bfec-29d8a5722895",
+								"2c555866-05b6-42c6-b0dd-d27341bc61ad"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1520,7 +1605,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced3",
+							"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1529,7 +1614,7 @@
 							"path": [
 								"api",
 								"role",
-								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced3"
+								"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
 							]
 						}
 					},
@@ -3795,7 +3880,7 @@
 					]
 				},
 				{
-					"name": "Get Team by ID",
+					"name": "Get Solution by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
