@@ -17,7 +17,7 @@ module.exports = {
      */
     return queryInterface.bulkInsert('user', [{
       user_id : constants.userID,
-      username : "p4dd2y",
+      username : "p4ddy",
       password : bcrypt.hashSync("test",10),
       first_name : "Paddy",
       last_name : "Mueller",
