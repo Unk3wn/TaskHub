@@ -8,8 +8,17 @@ const express = require('express'),
 
 app = express();
 
-//===============PASSPORT===============
+//===============SESSION HANDLER===============
+const expressSession = require('express-session')({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+});
 
+//===============PASSPORT===============
+const passport = require('passport');
+app.use(passport.initialize());
+app.use(passport.session());
 
 //===============CORS===============
 const corsOptions = {
