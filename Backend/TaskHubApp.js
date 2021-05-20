@@ -15,9 +15,6 @@ const expressSession = require('express-session')({
 });
 
 //===============PASSPORT===============
-const passport = require('passport');
-app.use(passport.initialize());
-app.use(passport.session());
 
 //===============CORS===============
 const corsOptions = {
