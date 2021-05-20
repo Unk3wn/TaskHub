@@ -2,7 +2,6 @@ const express = require('express'),
     bcrypt = require('bcryptjs'),
     dotenv = require('dotenv'),
     logger = require('morgan'),
-    indexRouter = require('./routes/index'),
     bodyParser = require('body-parser'),
     cors = require('cors')
 
@@ -38,7 +37,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 //===============ROUTES===============
+const indexRouter = require('./routes/index'),
+    apiRouter = require('./routes/apiRouter');
 app.use('/', indexRouter);
+app.use('/api',apiRouter);
 
 
 //===============SEQUELIZE===============
