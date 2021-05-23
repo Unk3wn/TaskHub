@@ -12,18 +12,26 @@ import { ErrorInterceptor } from '../app/_helpers/error.interceptor';
 import { AppComponent } from './app.component';
 import { AlertComponent } from '../app/_components/alert/alert.component';
 import { HomeComponent } from '../app/home/home.component';
+import { Classroom } from './classroom/classroom';
+import { TaskComponent } from './task/task.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
   declarations: [
     AppComponent,
     AlertComponent,
-    HomeComponent
+    HomeComponent,
+    Classroom,
+    TaskComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

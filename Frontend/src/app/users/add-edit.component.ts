@@ -43,8 +43,8 @@ export class AddEditComponent implements OnInit {
       this.accountService.getById(this.id)
         .pipe(first())
         .subscribe(x => {
-          this.f.firstName.setValue(x.firstName);
-          this.f.lastName.setValue(x.lastName);
+          this.f.firstName.setValue(x.first_name);
+          this.f.lastName.setValue(x.last_name);
           this.f.username.setValue(x.username);
         });
     }
