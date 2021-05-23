@@ -14,8 +14,6 @@ const expressSession = require('express-session')({
     saveUninitialized: false
 });
 
-//===============PASSPORT===============
-
 //===============CORS===============
 const corsOptions = {
     origin: "http://localhost:4200"
@@ -36,7 +34,9 @@ app.use(express.json());
 //===============ROUTES===============
 const indexRouter = require('./routes/index'),
     apiRouter = require('./routes/apiRouter');
+
 app.use('/', indexRouter);
+//Includes all Data and Auth Routes
 app.use('/api',apiRouter);
 
 
