@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
-import {User} from "../_models/user";
-import {HttpClient} from "@angular/common/http";
-import {process} from "process";
-import {Classroom} from "../classroom/classroom";
-import {Task} from "protractor/built/taskScheduler";
+import {Observable} from 'rxjs';
+import {User} from '../_models/user';
+import {HttpClient} from '@angular/common/http';
+// @ts-ignore
+import {process} from 'process';
+import {Classroom} from '../classroom/classroom';
+import {Task} from 'protractor/built/taskScheduler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  apiUrl: "http://localhost:8808/api"
+  apiUrl: 'http://localhost:8808/api';
 
   constructor(
     private http: HttpClient
   ) { }
 
   getUser(): Observable<User[]> {
-    console.log("NICO IST EIN KLEINER DUDE")
+    console.log('NICO IST EIN KLEINER DUDE');
     try {
       const user = this.http.get<User[]>(('http://localhost:8088/api/user'));
       return user;
@@ -45,7 +46,7 @@ export class ApiService {
   }
   postTask(answers): Observable<Task[]> {
     try {
-      const answer = this.http.post<Task[]>(('http://localhost:8088/api/task/'),JSON.stringify(answers));
+      const answer = this.http.post<Task[]>(('http://localhost:8088/api/task/'), JSON.stringify(answers));
       return answer;
     }catch (exception) {
       process.stderr.write(`ERROR received from ${this.apiUrl}: ${exception}\n`);
