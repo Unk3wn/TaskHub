@@ -13,5 +13,5 @@ module.exports = {
     user,
     task,
     team,
-    solution
+    solution,
 };

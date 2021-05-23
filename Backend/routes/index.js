@@ -33,6 +33,11 @@ router.get('/api/user/:id',userController.getById);
 router.post('/api/user',userController.add);
 router.put('/api/user/:id', userController.update);
 router.delete('/api/user/:id', userController.delete);
+router.post('/api/user/WithRoles',userController.addWithRoles);
+router.post('/api/user/addRole/:userID/:roleID',userController.addRoleToUser);
+router.post('/api/user/addClass/:userID/:classID',userController.addClassToUser);
+router.post('/api/user/addTeam/:userID/:teamID',userController.addTeamToUser);
+
 
 const taskController = require('../controllers').task;
 router.get('/api/task',taskController.list);

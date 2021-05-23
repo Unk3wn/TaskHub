@@ -3691,7 +3691,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8088/api/team",
+							"raw": "http://localhost:8088/api/team/2c555866-05b6-42c6-b0dd-d27341bc61ad",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3699,7 +3699,261 @@
 							"port": "8088",
 							"path": [
 								"api",
-								"team"
+								"team",
+								"2c555866-05b6-42c6-b0dd-d27341bc61ad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Solution",
+			"item": [
+				{
+					"name": "Get all Solutions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/solution",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"solution"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all Solutions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8088/api/solution",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"solution"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "560"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"230-97Ne1H4QAS/ZTgwct/QKLrFHLr8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 May 2021 17:10:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"solution_id\": \"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3\",\n        \"text\": \"IM KÜHLSCHRANK\",\n        \"time_ended\": false,\n        \"reviewed\": true,\n        \"marked\": false,\n        \"mark\": \"A-\",\n        \"team_id\": {\n            \"team_id\": \"2c555866-05b6-42c6-b0dd-d27341bc61ad\",\n            \"team_name\": \"Hagebacher\",\n            \"team_leader\": \"3f7bf944-7a3f-4648-bfec-29d8a5722895\",\n            \"class_id\": \"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73\"\n        },\n        \"task_id\": {\n            \"task_id\": \"a2fe481e-d186-47c1-a845-bdc182582321\",\n            \"subject_id\": \"eb1a1ae0-35e2-47b7-919e-9042704f059b\",\n            \"question\": \"Wo is die BUDDA ?\",\n            \"class\": \"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73\",\n            \"duedate\": \"2021-05-10T17:10:11.668Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Team by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/solution/00cb173c-ffd4-4f67-a190-bc2c41e9d5e3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"solution",
+								"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Team by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8088/api/solution/00cb173c-ffd4-4f67-a190-bc2c41e9d5e3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"solution",
+										"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8088"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "558"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22e-u0TEer2D4pCA25xVZpLWJXjtURU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 May 2021 17:12:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"solution_id\": \"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3\",\n    \"text\": \"IM KÜHLSCHRANK\",\n    \"time_ended\": false,\n    \"reviewed\": true,\n    \"marked\": false,\n    \"mark\": \"A-\",\n    \"team_id\": {\n        \"team_id\": \"2c555866-05b6-42c6-b0dd-d27341bc61ad\",\n        \"team_name\": \"Hagebacher\",\n        \"team_leader\": \"3f7bf944-7a3f-4648-bfec-29d8a5722895\",\n        \"class_id\": \"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73\"\n    },\n    \"task_id\": {\n        \"task_id\": \"a2fe481e-d186-47c1-a845-bdc182582321\",\n        \"subject_id\": \"eb1a1ae0-35e2-47b7-919e-9042704f059b\",\n        \"question\": \"Wo is die BUDDA ?\",\n        \"class\": \"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73\",\n        \"duedate\": \"2021-05-10T17:12:43.323Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Solution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\" : \"Buttergolems bessere Antwort\",\r\n    \"time_ended\" : false,\r\n    \"reviewed\" : false,\r\n    \"marked\" : false,\r\n    \"mark\" : \"A++\",\r\n    \"task\" : \"a2fe481e-d186-47c1-a845-bdc182582321\",\r\n    \"team\" : \"2c555866-05b6-42c6-b0dd-d27341bc61ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/solution",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"solution"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Solution",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\" : \"Buttergolems bessere Antwort v2\",\r\n    \"time_ended\" : false,\r\n    \"reviewed\" : false,\r\n    \"marked\" : false,\r\n    \"mark\" : \"A++\",\r\n    \"task\" : \"a2fe481e-d186-47c1-a845-bdc182582321\",\r\n    \"team\" : \"2c555866-05b6-42c6-b0dd-d27341bc61ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/solution/00cb173c-ffd4-4f67-a190-bc2c41e9d5e3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"solution",
+								"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Solution by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/solution/00cb173c-ffd4-4f67-a190-bc2c41e9d5e3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"solution",
+								"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
 							]
 						}
 					},

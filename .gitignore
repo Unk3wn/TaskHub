@@ -5,6 +5,7 @@
 *.iml
 /.idea
 /Backend/.env
+**/package-lock.json
 
 !.idea/modules.xml
 !CucumberTests/CucumberTests.iml
