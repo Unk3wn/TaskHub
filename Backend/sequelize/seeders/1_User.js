@@ -16,26 +16,33 @@ module.exports = {
      * }], {});
      */
     return queryInterface.bulkInsert('user', [{
-      user_id: constants.userID,
-      username: "p4ddy",
-      password: bcrypt.hashSync("test", 10),
+      user_id: constants.userIDAdmin,
+      username: "admin",
+      password: bcrypt.hashSync("admin", 10),
       first_name: "Paddy",
       last_name: "Mueller",
       email: "test@bonk.army"
     }, {
-      user_id: constants.userID2,
-      username: "llama",
-      password: bcrypt.hashSync("Lama", 10),
+      user_id: constants.userIDTeacher,
+      username: "teacher",
+      password: bcrypt.hashSync("teacher", 10),
       first_name: "Nico",
       last_name: "Holzhäuser",
       email: "nico@bonk.army"
     }, {
-      user_id: constants.userID3,
-      username: "krissi",
-      password: bcrypt.hashSync("krissi", 10),
+      user_id: constants.userIDStudent,
+      username: "student",
+      password: bcrypt.hashSync("student", 10),
       first_name: "Krissi",
       last_name: "Agne",
       email: "krissi@bonk.army"
+    }, {
+      user_id: constants.userIDUser,
+      username: "user",
+      password: bcrypt.hashSync("user", 10),
+      first_name: "Lorenz",
+      last_name: "Seufert",
+      email: "lorenz@bonk.army"
     }]);
   },
 
@@ -48,6 +55,6 @@ module.exports = {
      */
 
     const Op = Sequelize.Op
-    return queryInterface.bulkDelete('users', {user_id: {[Op.in]: [constants.userID, constants.userID2, constants.userID3]}}, {})
+    return queryInterface.bulkDelete('users', {user_id: {[Op.in]: [constants.userIDAdmin, constants.userIDTeacher, constants.userIDStudent, constants.userIDUser]}}, {})
   }
 };
