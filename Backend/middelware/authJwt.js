@@ -26,7 +26,7 @@ isStudent = (req, res, next) => {
     User.findByPk(req.userId).then(user => {
         user.getRoles().then(roles => {
             for (let i = 0; i < roles.length; i++) {
-                if (roles[i].name === "Student") {
+                if (roles[i].role_name === "Student") {
                     next();
                     return;
                 }
@@ -42,23 +42,23 @@ isTeacher = (req, res, next) => {
     User.findByPk(req.userId).then(user => {
         user.getRoles().then(roles => {
             for (let i = 0; i < roles.length; i++) {
-                if (roles[i].name === "Teacher") {
+                if (roles[i].role_name === "Teacher") {
                     next();
                     return;
                 }
             }
-
             res.status(403).send({
                 message: "Require Teacher Role!"
             });
         });
     });
 };
+
 isAdmin = (req, res, next) => {
     User.findByPk(req.userId).then(user => {
         user.getRoles().then(roles => {
             for (let i = 0; i < roles.length; i++) {
-                if (roles[i].name === "Admin") {
+                if (roles[i].role_name === "Admin") {
                     next();
                     return;
                 }

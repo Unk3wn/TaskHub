@@ -4077,6 +4077,17 @@
 						},
 						{
 							"name": "Login Admin",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4128,12 +4139,43 @@
 						},
 						{
 							"name": "Test User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const options = {\r",
+											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        \"Content-Type\": \"application/json\"\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'json',\r",
+											"        raw : JSON.stringify({\r",
+											"            'username' : 'user',\r",
+											"            'password' : 'user'\r",
+											"        })\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.sendRequest(options, function (err, res) {\r",
+											"    var jsonData = res.json();\r",
+											"    console.log(\"API token set : \"+jsonData.accessToken);\r",
+											"    pm.collectionVariables.unset(\"currentAPIToken\");\r",
+											"    pm.collectionVariables.set(\"currentAPIToken\", jsonData.accessToken);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-access-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjBjNjNkZTgtYTkxNC00N2FiLTlmZWItZTgyYTMzNWQ0NTg1IiwiaWF0IjoxNjIxNzczNzA3LCJleHAiOjE2MjE4NjAxMDd9.hMkHTOaS3eg_E7EcdGwg8vgqfPLE7uF4waOLTTdGdr4",
+										"value": "{{currentAPIToken}}",
 										"type": "text"
 									}
 								],
@@ -4155,12 +4197,43 @@
 						},
 						{
 							"name": "Test Student",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const options = {\r",
+											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        \"Content-Type\": \"application/json\"\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'json',\r",
+											"        raw : JSON.stringify({\r",
+											"            'username' : 'student',\r",
+											"            'password' : 'student'\r",
+											"        })\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.sendRequest(options, function (err, res) {\r",
+											"    var jsonData = res.json();\r",
+											"    console.log(\"API token set : \"+jsonData.accessToken);\r",
+											"    pm.collectionVariables.unset(\"currentAPIToken\");\r",
+											"    pm.collectionVariables.set(\"currentAPIToken\", jsonData.accessToken);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-access-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2Y3YmY5NDQtN2EzZi00NjQ4LWJmZWMtMjlkOGE1NzIyODk1IiwiaWF0IjoxNjIxNzcxODc5LCJleHAiOjE2MjE4NTgyNzl9.8nYtMcxaIFLymq9yacttequ-ATcu6f5O_6ew-wIfQP0",
+										"value": "{{currentAPIToken}}",
 										"type": "text"
 									}
 								],
@@ -4182,12 +4255,43 @@
 						},
 						{
 							"name": "Test Teacher",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const options = {\r",
+											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        \"Content-Type\": \"application/json\"\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'json',\r",
+											"        raw : JSON.stringify({\r",
+											"            'username' : 'teacher',\r",
+											"            'password' : 'teacher'\r",
+											"        })\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.sendRequest(options, function (err, res) {\r",
+											"    var jsonData = res.json();\r",
+											"    console.log(\"API token set : \"+jsonData.accessToken);\r",
+											"    pm.collectionVariables.unset(\"currentAPIToken\");\r",
+											"    pm.collectionVariables.set(\"currentAPIToken\", jsonData.accessToken);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-access-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2Y3YmY5NDQtN2EzZi00NjQ4LWJmZWMtMjlkOGE1NzIyODk1IiwiaWF0IjoxNjIxNzcxODc5LCJleHAiOjE2MjE4NTgyNzl9.8nYtMcxaIFLymq9yacttequ-ATcu6f5O_6ew-wIfQP0",
+										"value": "{{currentAPIToken}}",
 										"type": "text"
 									}
 								],
@@ -4209,15 +4313,49 @@
 						},
 						{
 							"name": "Test Admin",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const options = {\r",
+											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        \"Content-Type\": \"application/json\"\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'json',\r",
+											"        raw : JSON.stringify({\r",
+											"            'username' : 'admin',\r",
+											"            'password' : 'admin'\r",
+											"        })\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.sendRequest(options, function (err, res) {\r",
+											"    var jsonData = res.json();\r",
+											"    console.log(\"API token set : \"+jsonData.accessToken);\r",
+											"    pm.collectionVariables.unset(\"currentAPIToken\");\r",
+											"    pm.collectionVariables.set(\"currentAPIToken\", jsonData.accessToken);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-access-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjBjNjNkZTgtYTkxNC00N2FiLTlmZWItZTgyYTMzNWQ0NTg1IiwiaWF0IjoxNjIxNzczNzA3LCJleHAiOjE2MjE4NjAxMDd9.hMkHTOaS3eg_E7EcdGwg8vgqfPLE7uF4waOLTTdGdr4",
+										"value": "{{currentAPIToken}}",
 										"type": "text"
 									}
 								],
@@ -4249,6 +4387,40 @@
 					]
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8088/"
+		},
+		{
+			"key": "currentAPIToken",
+			"value": ""
+		},
+		{
+			"key": "accessToken",
+			"value": ""
 		}
 	]
 }
