@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "Start Backend": "node ./bin/www",
     "Install": "npm install",
     "Initzialize Sequelize ": "sequelize init",
     "Recreate DB": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
