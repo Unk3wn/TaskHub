@@ -3,7 +3,6 @@ const userController = require('../../controllers').user;
 
 router.get('/',userController.list);
 router.get('/:id',userController.getById);
-router.post('/',userController.add);
 router.put('/:id', userController.update);
 router.delete('/:id', userController.delete);
 router.post('/WithRoles',userController.addWithRoles);
