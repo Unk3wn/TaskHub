@@ -12,6 +12,7 @@ router.use(function (req, res, next) {
     );
     next();
 })
+//Danke Paddy für die Hilfe
 router.post("/signup",
     [
         verifySignUp.checkDuplicateUsernameOrEmail
