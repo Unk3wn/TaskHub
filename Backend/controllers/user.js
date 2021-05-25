@@ -90,7 +90,7 @@ module.exports = {
                         }
                         user.addRole(role);
                         return res.status(201).send({
-                            message : 'User was succesfully registered and \"'+user.username+'\" was added to Default Group \"'+role.role_name+"\""
+                            message : 'User was succesfully registered and "'+user.username+'" was added to Default Group "'+role.role_name+'"'
                         });
                     });
                 })
