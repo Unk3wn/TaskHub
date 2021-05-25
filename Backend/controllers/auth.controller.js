@@ -1,6 +1,7 @@
 const db = require("../sequelize/models");
 const User = db.user;
 const Role = db.role;
+const userController = require('../controllers').user;
 
 const Op = db.Sequelize.Op;
 
@@ -9,39 +10,8 @@ const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 
 exports.signup = (req, res) => {
-    // Save User to Database
-    User.create({
-        user_id : uuid.v4(),
-        username : req.body.username,
-        password : bcrypt.hashSync(req.body.password,10),
-        first_name : req.body.first_name,
-        last_name : req.body.last_name,
-        email : req.body.email
-    })
-        .then(user => {
-            if (req.body.roles) {
-                Role.findAll({
-                    where: {
-                        name: {
-                            [Op.or]: req.body.roles
-                        }
-                    }
-                }).then(roles => {
-                    user.setRoles(roles).then(() => {
-                        res.send({ message: "User was registered successfully!" });
-                    });
-                });
-            } else {
-                // user role = 1
-                user.setRoles([1]).then(() => {
-                    res.send({ message: "User was registered successfully!" });
-                });
-            }
-        })
-        .catch(err => {
-            res.status(500).send({ message: err.message });
-        });
-};
+    userController.add(req, res);
+}
 
 exports.signin = (req, res) => {
     User.findOne({

@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const {verifySignUp} = require("../../middelware/index");
-const controller = require("../../controllers/auth.controller");
+const authController = require("../../controllers/auth.controller");
+const userController = require("../../controllers/").user;
 
 router.use(function (req, res, next) {
     res.header(
@@ -13,11 +14,10 @@ router.use(function (req, res, next) {
 })
 router.post("/signup",
     [
-        verifySignUp.checkDuplicateUsernameOrEmail,
-        verifySignUp.checkRolesExisted
+        verifySignUp.checkDuplicateUsernameOrEmail
     ],
-    controller.signup);
+    userController.add);
 
-router.post("/signin", controller.signin);
+router.post("/signin", authController.signin);
 
 module.exports = router;

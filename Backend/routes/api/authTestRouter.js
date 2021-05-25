@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const {authJwt} = require("../../middelware");
-const controller = require("../../controllers/user.controller");
+const controller = require("../../controllers/demoAuthController");
 
 router.use(function (req, res, next) {
     res.header(

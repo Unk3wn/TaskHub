@@ -4,6 +4,7 @@ const klass = require('../sequelize/models').klass;
 const team = require('../sequelize/models').team;
 const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
+const Op = require('../sequelize/models').Sequelize.Op;
 
 module.exports = {
 
@@ -76,8 +77,26 @@ module.exports = {
                 last_name : req.body.last_name,
                 email : req.body.email
             })
-            .then((user) => res.status(201).send(user))
-            .catch((error) => res.status(400).send(error));
+                .then(user => {
+                    role.findOne({
+                        where:{
+                            role_name : "User"
+                        }
+                    }).then(role => {
+                        if(!role){
+                            return res.status(404).send({
+                                message : 'Default Role not found you Asshole!'
+                            });
+                        }
+                        user.addRole(role);
+                        return res.status(201).send({
+                            message : 'User was succesfully registered and \"'+user.username+'\" was added to Default Group \"'+role.role_name+"\""
+                        });
+                    });
+                })
+                .catch(err => {
+                    res.status(500).send({ message: err.message });
+                });
         }
     },
 
