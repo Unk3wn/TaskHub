@@ -18,18 +18,8 @@ module.exports = {
         return queryInterface.bulkInsert('A_User_Team', [{
             createdAt: new Date,
             updatedAt: new Date,
-            userUserId: constants.userID,
+            userUserId: constants.userIDStudent,
             teamTeamId: constants.teamID
-        }, {
-            createdAt: new Date,
-            updatedAt: new Date,
-            userUserId: constants.userID2,
-            teamTeamId: constants.teamID2
-        }, {
-            createdAt: new Date,
-            updatedAt: new Date,
-            userUserId: constants.userID3,
-            teamTeamId: constants.teamID2
         }]);
     },
 
@@ -40,17 +30,13 @@ module.exports = {
          * Example:
          * await queryInterface.bulkDelete('People', null, {});
          */
-        return queryInterface.bulkDelete('A_User_Team', {
-            userUserId: constants.userID,
-            teamTeamId: constants.teamID
-        })
         const Op = Sequelize.Op
         return queryInterface.bulkDelete('A_User_Team', {
             user_id: {
-                [Op.in]: [constants.userID, constants.userID2]
+                [Op.in]: [constants.userIDStudent]
             },
             team_id: {
-                [Op.in]: [constants.teamID, constants.teamID2]
+                [Op.in]: [constants.teamID]
             },
         }, {})
 

@@ -18,17 +18,12 @@ module.exports = {
         return queryInterface.bulkInsert('A_User_Class', [{
             createdAt: new Date,
             updatedAt: new Date,
-            userUserId: constants.userID,
+            userUserId: constants.userIDUser,
             klassClassId: constants.classID
         }, {
             createdAt: new Date,
             updatedAt: new Date,
-            userUserId: constants.userID2,
-            klassClassId: constants.classID
-        }, {
-            createdAt: new Date,
-            updatedAt: new Date,
-            userUserId: constants.userID3,
+            userUserId: constants.userIDStudent,
             klassClassId: constants.classID
         }]);
     },
@@ -42,7 +37,7 @@ module.exports = {
          */
         return queryInterface.bulkDelete('A_User_Class', {
             userUserId: {
-                [Op.in]: [constants.userID, constants.userID2, constants.userID3]
+                [Op.in]: [constants.userIDUser, constants.userIDStudent]
             },
         klassClassId: constants.classID
         }, {})

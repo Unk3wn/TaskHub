@@ -17,7 +17,19 @@ module.exports = {
          */
         return queryInterface.bulkInsert('role', [{
             role_id: constants.roleID,
-            role_name: "Testrole"
+            role_name: "Testrole",
+        },{
+            role_id: constants.roleIDAdmin,
+            role_name: "Admin",
+        },{
+            role_id: constants.roleIDUser,
+            role_name: "User",
+        },{
+            role_id: constants.roleIDStudent,
+            role_name: "Student",
+        },{
+            role_id: constants.roleIDTeacher,
+            role_name: "Teacher",
         }]);
     },
 
@@ -28,6 +40,7 @@ module.exports = {
          * Example:
          * await queryInterface.bulkDelete('People', null, {});
          */
-        return queryInterface.bulkDelete('role', {role_id: constants.roleID})
+        const Op = Sequelize.Op;
+        return queryInterface.bulkDelete('role', {role_id: {[Op.in]: [constants.roleID, constants.roleIDUser, constants.roleIDTeacher,constants.roleIDAdmin,constants.roleIDStudent]}})
     }
 };

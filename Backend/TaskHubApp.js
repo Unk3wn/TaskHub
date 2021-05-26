@@ -2,14 +2,17 @@ const express = require('express'),
     bcrypt = require('bcryptjs'),
     dotenv = require('dotenv'),
     logger = require('morgan'),
-    indexRouter = require('./routes/index'),
     bodyParser = require('body-parser'),
     cors = require('cors')
 
 app = express();
 
-//===============PASSPORT===============
-
+//===============SESSION HANDLER===============
+const expressSession = require('express-session')({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+});
 
 //===============CORS===============
 const corsOptions = {
@@ -29,7 +32,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 //===============ROUTES===============
+const indexRouter = require('./routes/index'),
+    apiRouter = require('./routes/apiRouter');
+
 app.use('/', indexRouter);
+//Includes all Data and Auth Routes
+app.use('/api',apiRouter);
 
 
 //===============SEQUELIZE===============
