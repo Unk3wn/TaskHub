@@ -9,10 +9,6 @@
 			"name": "API",
 			"item": [
 				{
-					"name": "Login",
-					"item": []
-				},
-				{
 					"name": "User",
 					"item": [
 						{
@@ -38,15 +34,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/user",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"user"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}"
 									]
 								}
 							},
@@ -76,546 +66,13 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/user/4bc15799-e94b-4d00-b2ab-4c7bc6145170",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{CONFIG_UserID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"user",
-										"4bc15799-e94b-4d00-b2ab-4c7bc6145170"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{CONFIG_UserID_Default}}"
 									]
 								}
 							},
-							"response": [
-								{
-									"name": "Get User by ID",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"url": {
-											"raw": "http://localhost:8088/api/user/3f7bf944-7a3f-4648-bfec-29d8a5722895",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8088",
-											"path": [
-												"api",
-												"user",
-												"3f7bf944-7a3f-4648-bfec-29d8a5722895"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "http://localhost:8088"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "159"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"9f-GTGAxt2V35YF/QL+scHnxIWr0Uc\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 08 May 2021 13:34:15 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"user_id\": \"3f7bf944-7a3f-4648-bfec-29d8a5722895\",\n    \"username\": \"p4ddy\",\n    \"password\": \"test1234\",\n    \"first_name\": \"Paddy\",\n    \"last_name\": \"Mueller\",\n    \"email\": \"test@bonk.army\"\n}"
-								},
-								{
-									"name": "User not found",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"url": {
-											"raw": "http://localhost:8088/api/user/3f7bf944-7a3f-4648-bfec-29d8a5722896",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8088",
-											"path": [
-												"api",
-												"user",
-												"3f7bf944-7a3f-4648-bfec-29d8a5722896"
-											]
-										}
-									},
-									"status": "Not Found",
-									"code": 404,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "http://localhost:8088"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "29"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"1d-0Rdz2Ru0MHJlmxyz5PTB2rVlOCo\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 08 May 2021 13:34:32 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"User not Found!\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Create User",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"username\" : \"Krissi\",\r\n    \"password\" : \"Krissi123\",\r\n    \"first_name\" : \"Kristin\",\r\n    \"last_name\" : \"Agne\",\r\n    \"email\" : \"k.agne@bonk.army\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8088/api/user/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"user",
-										""
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "User Created",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"username\" : \"P4ddyV2\",\r\n    \"first_name\" : \"Patrick\",\r\n    \"last_name\" : \"Mueller 2\",\r\n    \"email\" : \"neu@bonk.army\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://localhost:8088/api/user/",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8088",
-											"path": [
-												"api",
-												"user",
-												""
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "http://localhost:8088"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "158"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"9e-7G6LER37HWcg5rvoy1UpItwRXt4\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 08 May 2021 13:38:20 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"user_id\": \"4a77930a-443b-42f4-a3d4-31a8c5b495fa\",\n    \"username\": \"P4ddyV2\",\n    \"password\": null,\n    \"first_name\": \"Patrick\",\n    \"last_name\": \"Mueller 2\",\n    \"email\": \"neu@bonk.army\"\n}"
-								},
-								{
-									"name": "Not valid Username",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"username\" : \"\",\r\n    \"first_name\" : \"Patrick\",\r\n    \"last_name\" : \"Mueller 2\",\r\n    \"email\" : \"neu@bonk.army\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://localhost:8088/api/user/",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8088",
-											"path": [
-												"api",
-												"user",
-												""
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "html",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "http://localhost:8088"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "text/html; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "20"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"14-QPSdARYsd9EyWFcl1y8AA4Suc3Q\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 08 May 2021 13:38:39 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "Not a valid Username"
-								},
-								{
-									"name": "Not valid firstName",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"username\" : \"P4ddyV2\",\r\n    \"first_name\" : \"\",\r\n    \"last_name\" : \"Mueller 2\",\r\n    \"email\" : \"neu@bonk.army\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://localhost:8088/api/user/",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8088",
-											"path": [
-												"api",
-												"user",
-												""
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "html",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "http://localhost:8088"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "text/html; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "21"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"15-mZAdENPWHRVm29zQOx+O+E12hZM\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 08 May 2021 13:38:49 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "Not a valid firstName"
-								},
-								{
-									"name": "Not valid lastName",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"username\" : \"P4ddyV2\",\r\n    \"first_name\" : \"Patrick\",\r\n    \"last_name\" : \"\",\r\n    \"email\" : \"neu@bonk.army\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://localhost:8088/api/user/",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8088",
-											"path": [
-												"api",
-												"user",
-												""
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "html",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "http://localhost:8088"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "text/html; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "20"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"14-pT0/RYGwqzmHeR2aPyKvUBrqe+A\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 08 May 2021 13:39:01 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "Not a valid lastName"
-								},
-								{
-									"name": "Not a valid EMail Address",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"username\" : \"P4ddy\",\r\n    \"first_name\" : \"Patrick\",\r\n    \"last_name\" : \"Mueller 2\",\r\n    \"email\" : \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://localhost:8088/api/user/",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8088",
-											"path": [
-												"api",
-												"user",
-												""
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "html",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "http://localhost:8088"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "text/html; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "25"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"19-Tnz0/9ZTzB7uy7owGs1NwUcc7e8\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 08 May 2021 13:39:20 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "Not a valid eMail-Address"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Update a User",
@@ -624,7 +81,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"role_name\" : \"Testrole umbennennen\"\r\n}",
+									"raw": "{\r\n    \"first_name\" : \"Lorenzo\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -632,16 +89,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/user/4bc15799-e94b-4d00-b2ab-4c7bc6145170",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{CONFIG_UserID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"user",
-										"4bc15799-e94b-4d00-b2ab-4c7bc6145170"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{CONFIG_UserID_Default}}"
 									]
 								}
 							},
@@ -1014,16 +464,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/user/4bc15799-e94b-4d00-b2ab-4c7bc6145170",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{CONFIG_UserID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"user",
-										"4bc15799-e94b-4d00-b2ab-4c7bc6145170"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{CONFIG_UserID_Default}}"
 									]
 								}
 							},
@@ -1100,7 +543,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\" : \"Krissi\",\r\n    \"password\" : \"Krissi123\",\r\n    \"first_name\" : \"Kristin\",\r\n    \"last_name\" : \"Agne\",\r\n    \"email\" : \"k.agne@bonk.army\",\r\n    \"roles\":{\r\n            \"role_id\": \"097ed6cc-657a-4c6d-9f0f-d4fadb1fced3\",\r\n            \"role_name\": \"Testroll with User created\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"username\" : \"Krissi\",\r\n    \"password\" : \"Krissi123\",\r\n    \"first_name\" : \"Kristin\",\r\n    \"last_name\" : \"Agne\",\r\n    \"email\" : \"k.agne@bonk.army\",\r\n    \"roles\":{\r\n            \"role_id\": \"097ea6cc-657a-4c6d-9f0f-d4fadb1fced3\",\r\n            \"role_name\": \"Testroll with User created\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1108,16 +551,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/user/WithRoles",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_WithRoles}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"user",
-										"WithRoles"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_WithRoles}}"
 									]
 								}
 							},
@@ -1129,18 +565,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/user/addRole/4bc15799-e94b-4d00-b2ab-4c7bc6145170/5c62594f-f973-4d28-bfd7-aa18679ebdf0",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_addRole}}{{CONFIG_UserID_Default}}/{{CONFIG_RoleID_Default}}",
 									"host": [
-										"localhost"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_addRole}}{{CONFIG_UserID_Default}}"
 									],
-									"port": "8088",
 									"path": [
-										"api",
-										"user",
-										"addRole",
-										"4bc15799-e94b-4d00-b2ab-4c7bc6145170",
-										"5c62594f-f973-4d28-bfd7-aa18679ebdf0"
+										"{{CONFIG_RoleID_Default}}"
 									]
 								}
 							},
@@ -1152,18 +582,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/user/addClass/4bc15799-e94b-4d00-b2ab-4c7bc6145170/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_addClass}}{{CONFIG_UserID_Default}}/{{CONFIG_ClassID_Default}}",
 									"host": [
-										"localhost"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_addClass}}{{CONFIG_UserID_Default}}"
 									],
-									"port": "8088",
 									"path": [
-										"api",
-										"user",
-										"addClass",
-										"4bc15799-e94b-4d00-b2ab-4c7bc6145170",
-										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+										"{{CONFIG_ClassID_Default}}"
 									]
 								}
 							},
@@ -1175,18 +599,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/user/addTeam/4bc15799-e94b-4d00-b2ab-4c7bc6145170/2c555866-05b6-42c6-b0dd-d27341bc61ad",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_addTeam}}{{CONFIG_UserID_Default}}/{{CONFIG_TeamID_Default}}",
 									"host": [
-										"localhost"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_User}}{{API_Identifier_User_addTeam}}{{CONFIG_UserID_Default}}"
 									],
-									"port": "8088",
 									"path": [
-										"api",
-										"user",
-										"addTeam",
-										"4bc15799-e94b-4d00-b2ab-4c7bc6145170",
-										"2c555866-05b6-42c6-b0dd-d27341bc61ad"
+										"{{CONFIG_TeamID_Default}}"
 									]
 								}
 							},
@@ -1220,15 +638,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/class",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Class}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"class"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Class}}"
 									]
 								}
 							},
@@ -1272,16 +684,9 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Class}}{{CONFIG_ClassID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"class",
-										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Class}}{{CONFIG_ClassID_Default}}"
 									]
 								}
 							},
@@ -1437,16 +842,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/class/",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Class}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"class",
-										""
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Class}}"
 									]
 								}
 							},
@@ -1604,7 +1002,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"role_name\" : \"Testrole umbennennen\"\r\n}",
+									"raw": "{\r\n    \"classname\" : \"Testclass umbennennen\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1612,16 +1010,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Class}}{{CONFIG_ClassID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"class",
-										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Class}}{{CONFIG_ClassID_Default}}"
 									]
 								}
 							},
@@ -1706,16 +1097,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/class/7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Class}}{{CONFIG_ClassID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"class",
-										"7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Class}}{{CONFIG_ClassID_Default}}"
 									]
 								}
 							},
@@ -1813,15 +1197,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/role",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Role}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"role"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Role}}"
 									]
 								}
 							},
@@ -1865,16 +1243,9 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Role}}{{CONFIG_RoleID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"role",
-										"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Role}}{{CONFIG_RoleID_Default}}"
 									]
 								}
 							},
@@ -2030,16 +1401,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/role/",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Role}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"role",
-										""
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Role}}"
 									]
 								}
 							},
@@ -2205,16 +1569,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Role}}{{CONFIG_RoleID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"role",
-										"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Role}}{{CONFIG_RoleID_Default}}"
 									]
 								}
 							},
@@ -2371,16 +1728,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/role/097ed6cc-657a-4c6d-9f0f-d4fadb1fced4",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Role}}{{CONFIG_RoleID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"role",
-										"097ed6cc-657a-4c6d-9f0f-d4fadb1fced4"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Role}}{{CONFIG_RoleID_Default}}"
 									]
 								}
 							},
@@ -2524,15 +1874,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/subject",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"subject"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}"
 									]
 								}
 							},
@@ -2551,16 +1895,9 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/subject/eb1a1ae0-35e2-47b7-919e-9042704f059b",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}{{CONFIG_SubjectID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"subject",
-										"eb1a1ae0-35e2-47b7-919e-9042704f059b"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}{{CONFIG_SubjectID_Default}}"
 									]
 								}
 							},
@@ -2716,16 +2053,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/subject/",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"subject",
-										""
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}"
 									]
 								}
 							},
@@ -2819,16 +2149,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/subject/eb1a1ae0-35e2-47b7-919e-9042704f059a",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}{{CONFIG_SubjectID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"subject",
-										"eb1a1ae0-35e2-47b7-919e-9042704f059a"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}{{CONFIG_SubjectID_Default}}"
 									]
 								}
 							},
@@ -2985,16 +2308,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/subject/eb1a1ae0-35e2-47b7-919e-9042704f059a",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}{{CONFIG_SubjectID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"subject",
-										"eb1a1ae0-35e2-47b7-919e-9042704f059a"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Subject}}{{CONFIG_SubjectID_Default}}"
 									]
 								}
 							},
@@ -3138,15 +2454,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/task",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Task}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"task"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Task}}"
 									]
 								}
 							},
@@ -3158,16 +2468,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/task/a2fe481e-d186-47c1-a845-bdc182582321",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Task}}{{CONFIG_TaskID_DEFAULT}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"task",
-										"a2fe481e-d186-47c1-a845-bdc182582321"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Task}}{{CONFIG_TaskID_DEFAULT}}"
 									]
 								}
 							},
@@ -3188,16 +2491,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/task/",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Task}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"task",
-										""
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Task}}"
 									]
 								}
 							},
@@ -3291,16 +2587,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/task/a2fe481e-d186-47c1-a845-bdc182582321",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Task}}{{CONFIG_TaskID_DEFAULT}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"task",
-										"a2fe481e-d186-47c1-a845-bdc182582321"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Task}}{{CONFIG_TaskID_DEFAULT}}"
 									]
 								}
 							},
@@ -3385,16 +2674,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/task/a2fe481e-d186-47c1-a845-bdc182582321",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Task}}{{CONFIG_TaskID_DEFAULT}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"task",
-										"a2fe481e-d186-47c1-a845-bdc182582321"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Task}}{{CONFIG_TaskID_DEFAULT}}"
 									]
 								}
 							},
@@ -3475,15 +2757,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/team",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Team}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"team"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Team}}"
 									]
 								}
 							},
@@ -3558,16 +2834,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/team/2c555866-05b6-42c6-b0dd-d27341bc61ad",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Team}}{{CONFIG_TeamID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"team",
-										"2c555866-05b6-42c6-b0dd-d27341bc61ad"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Team}}{{CONFIG_TeamID_Default}}"
 									]
 								}
 							},
@@ -3588,15 +2857,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/team",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Team}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"team"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Team}}"
 									]
 								}
 							},
@@ -3689,16 +2952,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/team/2c555866-05b6-42c6-b0dd-d27341bc61ad",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Team}}{{CONFIG_TeamID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"team",
-										"2c555866-05b6-42c6-b0dd-d27341bc61ad"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Team}}{{CONFIG_TeamID_Default}}"
 									]
 								}
 							},
@@ -3783,16 +3039,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/team/2c555866-05b6-42c6-b0dd-d27341bc61ad",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Team}}{{CONFIG_TeamID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"team",
-										"2c555866-05b6-42c6-b0dd-d27341bc61ad"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Team}}{{CONFIG_TeamID_Default}}"
 									]
 								}
 							},
@@ -3809,15 +3058,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/solution",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"solution"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}"
 									]
 								}
 							},
@@ -3892,16 +3135,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/solution/00cb173c-ffd4-4f67-a190-bc2c41e9d5e3",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}{{CONFIG_SolutionID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"solution",
-										"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}{{CONFIG_SolutionID_Default}}"
 									]
 								}
 							},
@@ -3986,15 +3222,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/solution",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"solution"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}"
 									]
 								}
 							},
@@ -4015,16 +3245,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/solution/00cb173c-ffd4-4f67-a190-bc2c41e9d5e3",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}{{CONFIG_SolutionID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"solution",
-										"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}{{CONFIG_SolutionID_Default}}"
 									]
 								}
 							},
@@ -4036,16 +3259,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/solution/00cb173c-ffd4-4f67-a190-bc2c41e9d5e3",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}{{CONFIG_SolutionID_Default}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"solution",
-										"00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Solution}}{{CONFIG_SolutionID_Default}}"
 									]
 								}
 							},
@@ -4059,17 +3275,21 @@
 						{
 							"name": "Registrieren",
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"Kriss12iii\",\r\n    \"password\" : \"Krissi123\",\r\n    \"first_name\" : \"Kristin\",\r\n    \"last_name\" : \"Agne\",\r\n    \"email\" : \"k.a12ignie@bonk.army\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://localhost:8088/login",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Auth}}{{API_Identifier_Auth_SignUp}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"login"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Auth}}{{API_Identifier_Auth_SignUp}}"
 									]
 								}
 							},
@@ -4101,16 +3321,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/auth/signin",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Auth}}{{API_Identifier_Auth_SignIn}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"auth",
-										"signin"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Auth}}{{API_Identifier_Auth_SignIn}}"
 									]
 								}
 							},
@@ -4122,16 +3335,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8088/api/test/all",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Public}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"test",
-										"all"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Public}}"
 									]
 								}
 							},
@@ -4144,8 +3350,10 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
+											"const urlSignUp = pm.variables.get(\"URL\") + pm.variables.get(\"API_Identifier\") + pm.variables.get(\"API_Identifier_Auth\") + pm.variables.get(\"API_Identifier_Auth_SignIn\")\r",
+											"\r",
 											"const options = {\r",
-											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    url: urlSignUp,\r",
 											"    method: 'POST',\r",
 											"    header: {\r",
 											"        \"Content-Type\": \"application/json\"\r",
@@ -4153,8 +3361,8 @@
 											"    body: {\r",
 											"        mode: 'json',\r",
 											"        raw : JSON.stringify({\r",
-											"            'username' : 'user',\r",
-											"            'password' : 'user'\r",
+											"            'username' : pm.variables.get(\"USER_Name_User\"),\r",
+											"            'password' : pm.variables.get(\"USER_Password_User\")\r",
 											"        })\r",
 											"    }\r",
 											"};\r",
@@ -4180,16 +3388,9 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8088/api/test/user",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_User}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"test",
-										"user"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_User}}"
 									]
 								}
 							},
@@ -4202,8 +3403,10 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
+											"const urlSignUp = pm.variables.get(\"URL\") + pm.variables.get(\"API_Identifier\") + pm.variables.get(\"API_Identifier_Auth\") + pm.variables.get(\"API_Identifier_Auth_SignIn\")\r",
+											"\r",
 											"const options = {\r",
-											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    url: urlSignUp,\r",
 											"    method: 'POST',\r",
 											"    header: {\r",
 											"        \"Content-Type\": \"application/json\"\r",
@@ -4211,8 +3414,8 @@
 											"    body: {\r",
 											"        mode: 'json',\r",
 											"        raw : JSON.stringify({\r",
-											"            'username' : 'student',\r",
-											"            'password' : 'student'\r",
+											"            'username' : pm.variables.get(\"USER_Name_Student\"),\r",
+											"            'password' : pm.variables.get(\"USER_Password_Student\")\r",
 											"        })\r",
 											"    }\r",
 											"};\r",
@@ -4238,16 +3441,9 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8088/api/test/student",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Student}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"test",
-										"student"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Student}}"
 									]
 								}
 							},
@@ -4260,8 +3456,10 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
+											"const urlSignUp = pm.variables.get(\"URL\") + pm.variables.get(\"API_Identifier\") + pm.variables.get(\"API_Identifier_Auth\") + pm.variables.get(\"API_Identifier_Auth_SignIn\")\r",
+											"\r",
 											"const options = {\r",
-											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    url: urlSignUp,\r",
 											"    method: 'POST',\r",
 											"    header: {\r",
 											"        \"Content-Type\": \"application/json\"\r",
@@ -4269,8 +3467,8 @@
 											"    body: {\r",
 											"        mode: 'json',\r",
 											"        raw : JSON.stringify({\r",
-											"            'username' : 'teacher',\r",
-											"            'password' : 'teacher'\r",
+											"            'username' : pm.variables.get(\"USER_Name_Teacher\"),\r",
+											"            'password' : pm.variables.get(\"USER_Password_Teacher\")\r",
 											"        })\r",
 											"    }\r",
 											"};\r",
@@ -4296,16 +3494,9 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8088/api/test/teacher",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Teacher}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"test",
-										"teacher"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Teacher}}"
 									]
 								}
 							},
@@ -4318,8 +3509,10 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
+											"const urlSignUp = pm.variables.get(\"URL\") + pm.variables.get(\"API_Identifier\") + pm.variables.get(\"API_Identifier_Auth\") + pm.variables.get(\"API_Identifier_Auth_SignIn\")\r",
+											"\r",
 											"const options = {\r",
-											"    url: 'http://localhost:8088/api/auth/signin',\r",
+											"    url: urlSignUp,\r",
 											"    method: 'POST',\r",
 											"    header: {\r",
 											"        \"Content-Type\": \"application/json\"\r",
@@ -4327,8 +3520,8 @@
 											"    body: {\r",
 											"        mode: 'json',\r",
 											"        raw : JSON.stringify({\r",
-											"            'username' : 'admin',\r",
-											"            'password' : 'admin'\r",
+											"            'username' : pm.variables.get(\"USER_Name_Admin\"),\r",
+											"            'password' : pm.variables.get(\"USER_Password_Admin\")\r",
 											"        })\r",
 											"    }\r",
 											"};\r",
@@ -4369,16 +3562,9 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8088/api/test/admin",
-									"protocol": "http",
+									"raw": "{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Admin}}",
 									"host": [
-										"localhost"
-									],
-									"port": "8088",
-									"path": [
-										"api",
-										"test",
-										"admin"
+										"{{URL}}{{API_Identifier}}{{API_Identifier_Test}}{{API_Identifier_Test_Admin}}"
 									]
 								}
 							},
@@ -4412,15 +3598,155 @@
 	"variable": [
 		{
 			"key": "URL",
-			"value": "http://localhost:8088/"
+			"value": "https://localhost:8088/"
 		},
 		{
 			"key": "currentAPIToken",
 			"value": ""
 		},
 		{
-			"key": "accessToken",
-			"value": ""
+			"key": "API_Identifier",
+			"value": "api/"
+		},
+		{
+			"key": "API_Identifier_User",
+			"value": "user/"
+		},
+		{
+			"key": "API_Identifier_User_WithRoles",
+			"value": "WithRoles/"
+		},
+		{
+			"key": "API_Identifier_User_addRole",
+			"value": "addRole/"
+		},
+		{
+			"key": "API_Identifier_User_addClass",
+			"value": "addClass/"
+		},
+		{
+			"key": "API_Identifier_User_addTeam",
+			"value": "addTeam/"
+		},
+		{
+			"key": "API_Identifier_Class",
+			"value": "class/"
+		},
+		{
+			"key": "API_Identifier_Role",
+			"value": "role/"
+		},
+		{
+			"key": "API_Identifier_Subject",
+			"value": "subject/"
+		},
+		{
+			"key": "API_Identifier_Task",
+			"value": "task/"
+		},
+		{
+			"key": "API_Identifier_Team",
+			"value": "team/"
+		},
+		{
+			"key": "API_Identifier_Solution",
+			"value": "solution/"
+		},
+		{
+			"key": "API_Identifier_Auth",
+			"value": "auth/"
+		},
+		{
+			"key": "API_Identifier_Auth_SignIn",
+			"value": "signIn"
+		},
+		{
+			"key": "API_Identifier_Auth_SignUp",
+			"value": "signUp"
+		},
+		{
+			"key": "API_Identifier_Test",
+			"value": "test/"
+		},
+		{
+			"key": "API_Identifier_Test_Public",
+			"value": "all/"
+		},
+		{
+			"key": "API_Identifier_Test_User",
+			"value": "user/"
+		},
+		{
+			"key": "API_Identifier_Test_Student",
+			"value": "student/"
+		},
+		{
+			"key": "API_Identifier_Test_Teacher",
+			"value": "teacher/"
+		},
+		{
+			"key": "API_Identifier_Test_Admin",
+			"value": "admin/"
+		},
+		{
+			"key": "CONFIG_ClassID_Default",
+			"value": "7a2fb42d-2fcf-4c6e-b285-c9fd8f8b4f73"
+		},
+		{
+			"key": "CONFIG_RoleID_Default",
+			"value": "097ed6cc-657a-4c6d-9f0f-d4fadb1fced3"
+		},
+		{
+			"key": "CONFIG_SolutionID_Default",
+			"value": "00cb173c-ffd4-4f67-a190-bc2c41e9d5e3"
+		},
+		{
+			"key": "CONFIG_SubjectID_Default",
+			"value": "eb1a1ae0-35e2-47b7-919e-9042704f059b"
+		},
+		{
+			"key": "CONFIG_UserID_Default",
+			"value": "94a094e2-999f-47d3-8cdc-730664729ef0"
+		},
+		{
+			"key": "CONFIG_TeamID_Default",
+			"value": "2c555866-05b6-42c6-b0dd-d27341bc61ad"
+		},
+		{
+			"key": "CONFIG_TaskID_DEFAULT",
+			"value": "a2fe481e-d186-47c1-a845-bdc182582321"
+		},
+		{
+			"key": "USER_Name_User",
+			"value": "user"
+		},
+		{
+			"key": "USER_Name_Student",
+			"value": "student"
+		},
+		{
+			"key": "USER_Name_Teacher",
+			"value": "teacher"
+		},
+		{
+			"key": "USER_Name_Admin",
+			"value": "admin"
+		},
+		{
+			"key": "USER_Password_User",
+			"value": "user"
+		},
+		{
+			"key": "USER_Password_Student",
+			"value": "student"
+		},
+		{
+			"key": "USER_Password_Teacher",
+			"value": "teacher"
+		},
+		{
+			"key": "USER_Password_Admin",
+			"value": "admin"
 		}
 	]
 }
