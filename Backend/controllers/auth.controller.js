@@ -1,13 +1,9 @@
 const db = require("../sequelize/models");
-const User = db.user;
-const Role = db.role;
+const User = db.user
 const userController = require('../controllers').user;
 
-const Op = db.Sequelize.Op;
-
-var jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
-const uuid = require('uuid');
 
 exports.signup = (req, res) => {
     userController.add(req, res);
