@@ -18,13 +18,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"  pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response time is less than 200ms\", () => {\r",
-											"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
-											"});"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -3590,7 +3584,21 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					""
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Body matches string\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"\");",
+					"});",
+					"",
+					"pm.test(\"Response time is less than 200ms\", () => {",
+					"  pm.expect(pm.response.responseTime).to.be.below(200);",
+					"});",
+					"",
+					"pm.test(\"Content-Type is present\", function () {",
+					"    pm.response.to.have.header(\"Content-Type\");",
+					"});"
 				]
 			}
 		}
