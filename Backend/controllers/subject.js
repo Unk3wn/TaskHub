@@ -22,7 +22,6 @@ module.exports = {
                 return res.status(200).send(subject);
             })
             .catch((error) => {
-                console.log(error);
                 res.status(400).send(error);
             });
     },

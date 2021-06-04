@@ -5,6 +5,7 @@
   "scripts": {
     "Start Backend": "node ./bin/www",
     "Install": "npm install",
+    "Test" : "npm test",
     "Initzialize Sequelize ": "sequelize init",
     "Recreate DB": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
     "Seed Data": "npx sequelize-cli db:seed:all"

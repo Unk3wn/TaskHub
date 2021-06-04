@@ -22,7 +22,6 @@ module.exports = {
                 return res.status(200).send(klass);
             })
             .catch((error) => {
-                console.log(error);
                 res.status(400).send(error);
             });
     },
@@ -41,7 +40,6 @@ module.exports = {
     },
 
     update(req,res){
-        console.log(req.body);
         return klass
             .findByPk(req.params.id)
             .then((role) => {
