@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import {User} from '../_models/user';
+import {User} from './_models/user';
 import {HttpClient} from '@angular/common/http';
 // @ts-ignore
 import {process} from 'process';
 import {Classroom} from '../classroom/classroom';
 import {Task} from 'protractor/built/taskScheduler';
-import {Subject} from '../_models/subject';
+import {Subject} from './_models/subject';
 
 @Injectable({
   providedIn: 'root'
