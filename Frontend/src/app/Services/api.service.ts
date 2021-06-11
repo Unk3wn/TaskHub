@@ -6,6 +6,7 @@ import {HttpClient} from '@angular/common/http';
 import {process} from 'process';
 import {Classroom} from '../classroom/classroom';
 import {Task} from 'protractor/built/taskScheduler';
+import {Subject} from '../_models/subject';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,15 @@ export class ApiService {
     try {
       const classeroom = this.http.get<Classroom[]>(('http://localhost:8088/api/class'));
       return classeroom;
+    } catch (exception) {
+      process.stderr.write(`ERROR received from ${this.apiUrl}: ${exception}\n`);
+    }
+  }
+
+  getSubject(): Observable<Subject[]> {
+    try {
+      const subject = this.http.get<Subject[]>(('http://localhost:8088/api/task'));
+      return subject;
     } catch (exception) {
       process.stderr.write(`ERROR received from ${this.apiUrl}: ${exception}\n`);
     }

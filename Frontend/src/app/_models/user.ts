@@ -1,3 +1,5 @@
+import {Classroom} from './classroom';
+
 export class User {
   user_id: string;
   username: string;
@@ -6,4 +8,5 @@ export class User {
   last_name: string;
   email: string;
   token: string;
+  classroom: Classroom;
 }
