@@ -45,12 +45,65 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>Rooter</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+		<link rel="stylesheet" href="./index.css">
+		<link rel="shortcut icon" type="image/x-icon" href="ressources/favicon.ico">
+		<title>Presentation - TaskHUB</title>
 	</head>
 	<body>
-	<a href="./midterm.html">Midterm Presentation</a>
-	<a href="./Final.html">Final Presentation</a>
+	<div class="blog-slider">
+		<div class="blog-slider__wrp swiper-wrapper">
+			<div class="blog-slider__item swiper-slide">
+				<div class="blog-slider__img">
+					<img width="680" height="768" src="https://st2.depositphotos.com/4169661/9938/i/600/depositphotos_99383644-stock-photo-man-hand-writing-final-exam.jpg" alt="">
+				</div>
+				<div class="blog-slider__content">
+					<span class="blog-slider__code">18 June 2021</span>
+					<div class="blog-slider__title">Final Presentation</div>
+					<div class="blog-slider__text">Final Presentation for the Course Software Development @ DHBW Karlsruhe</div>
+					<a href="final.html" class="blog-slider__button">View Presentation</a>
+				</div>
+			</div>
+			<div class="blog-slider__item swiper-slide">
+				<div class="blog-slider__img">
+					<img src="http://www.rhshightimes.com/wp-content/uploads/2019/01/Should-Midterms-come-back-Wednesday-Hsu_-1024x768.jpg" alt="">
+				</div>
+				<div class="blog-slider__content">
+					<span class="blog-slider__code">10 December 2020</span>
+					<div class="blog-slider__title">Midterm Presentation</div>
+					<div class="blog-slider__text">Midterm Presentation as a Final Test for the Presentation in 4th Semester </div>
+					<a href="./midterm.html" class="blog-slider__button">View Presentation</a>
+				</div>
+			</div>
+		</div>
+		<div class="blog-slider__pagination"></div>
+	</div>
+	<script>
+		var swiper = new Swiper('.blog-slider', {
+			spaceBetween: 30,
+			effect: 'fade',
+			loop: true,
+			mousewheel: {
+				invert: false,
+			},
+			// autoHeight: true,
+			pagination: {
+				el: '.blog-slider__pagination',
+				clickable: true,
+			}
+		});
+	</script>
+	<div class="footerWrap">
+		<div class="footer">
+			<div class="footerContent">
+				<p><a href="https://uicookies.com/bootstrap-cards/">Responsive Blog Card Slider</a> Design from <a href="https://uicookies.com/">UICookies</a>
+				Pictures from <a href="http://www.rhshightimes.com/">Wednesday Hsu</a> &amp; <a href="https://de.depositphotos.com/">Depositphotos</a></p>
+			</div>
+		</div>
+	</div>
 	</body>
 </html>
