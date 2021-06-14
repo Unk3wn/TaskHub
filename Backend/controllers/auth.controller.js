@@ -42,7 +42,7 @@ exports.signin = (req, res) => {
                     authorities.push("ROLE_" + roles[i].role_name.toUpperCase());
                 }
                 res.status(200).send({
-                    id: user.id,
+                    user_id : user.user_id,
                     username: user.username,
                     email: user.email,
                     roles: authorities,
