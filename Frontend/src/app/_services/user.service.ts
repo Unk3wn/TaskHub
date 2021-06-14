@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 const API_URL = 'https://localhost:8088/api/user/';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,10 +20,15 @@ export class UserService {
   }
 
   getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', { responseType: 'text' });
+    return this.http.get(API_URL + 'teacher', { responseType: 'text' });
   }
 
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
+  }
+
+  getUserById(id): Observable<any> {
+    return this.http.get(API_URL + '' +
+      id, { responseType: 'text' });
   }
 }

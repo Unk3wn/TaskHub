@@ -12,6 +12,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import {AppRoutingModule} from './app.routing.module';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {AppRoutingModule} from './app.routing.module';
     HomeComponent,
     ProfileComponent,
     BoardAdminComponent,
+    BoardModeratorComponent,
   ],
   imports: [
     BrowserModule,

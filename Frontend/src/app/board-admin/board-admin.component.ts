@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
+import {ApiService} from '../_services/api.service';
+import {ClassService} from '../_services/class.service';
 
 @Component({
   selector: 'app-board-admin',
@@ -8,8 +10,10 @@ import { UserService } from '../_services/user.service';
 })
 export class BoardAdminComponent implements OnInit {
   content?: string;
+  public classname: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private classService: ClassService ) { }
 
   ngOnInit(): void {
     this.userService.getAdminBoard().subscribe(
@@ -20,5 +24,8 @@ export class BoardAdminComponent implements OnInit {
         this.content = JSON.parse(err.error).message;
       }
     );
+  }
+  onSubmit(): void {
+    this.classService.createClass(this.classname).subscribe();
   }
 }
