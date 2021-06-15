@@ -19,7 +19,6 @@ export class ApiService {
   ) { }
 
   getUser(): Observable<User[]> {
-    console.log('NICO IST EIN KLEINER DUDE');
     try {
       const user = this.http.get<User[]>(('http://localhost:8088/api/user'));
       return user;

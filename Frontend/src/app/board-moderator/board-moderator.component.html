@@ -1,4 +1,23 @@
-<div class="form-group">
-  <p>{{currentUser.name}}</p>
-</div>
-Nico ist ein kleiner Zwerg
+<mat-form-field appearance="fill">
+  <mat-label>Klassen</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let class of classes" [value]="class">
+      {{class.classname}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<p>{{lastname}}</p>
+<p>{{firstname}}</p>
+
+Create a task
+//todo Eingabe für Frage für die oben gewählte Klasse,
+
+<mat-form-field appearance="fill">
+  <mat-label>Fächer</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let subs of subjects" [value]="subs">
+      {{subs.subject_name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+

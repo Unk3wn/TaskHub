@@ -13,6 +13,10 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import {AppRoutingModule} from './app.routing.module';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import {MatOptionModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

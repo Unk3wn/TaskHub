@@ -3,3 +3,12 @@
     <p>{{ content }}</p>
   </header>
 </div>
+
+<mat-form-field appearance="fill">
+  <mat-label>Teams</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let team of teams" [value]="team">
+      {{team.team_name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
