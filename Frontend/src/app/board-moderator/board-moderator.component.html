@@ -1,23 +1,53 @@
+<div>Hello {{firstname}} {{lastname}}</div>
+<form
+  (ngSubmit)="onSubmit()"
+  #f="ngForm"
+>
+  <div class="form-group">
+<h2>Wähle eine Klasse</h2>
 <mat-form-field appearance="fill">
   <mat-label>Klassen</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let class of classes" [value]="class">
-      {{class.classname}}
+  <mat-select class="form-control" id="class"
+              required
+              [(ngModel)]="form.myClasses" name="classes">
+<mat-option *ngFor="let myClass of classes" [value]="myClass">
+      {{myClass.classname}}
     </mat-option>
   </mat-select>
 </mat-form-field>
-<p>{{lastname}}</p>
-<p>{{firstname}}</p>
+</div>
 
-Create a task
-//todo Eingabe für Frage für die oben gewählte Klasse,
-
+<div class="form-group">
+<h2>Wähle ein Fach</h2>
 <mat-form-field appearance="fill">
   <mat-label>Fächer</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let subs of subjects" [value]="subs">
+  <mat-select class="form-control" id="task"
+  required
+  [(ngModel)]="form.subject_id" name="task">
+    <mat-option *ngFor="let subs of subjects" [value]="subs.subject_id">
       {{subs.subject_name}}
     </mat-option>
   </mat-select>
 </mat-form-field>
+  </div>
 
+  <h2>Datum wählen</h2>
+  <mat-form-field appearance="fill">
+    <input matInput [matDatepicker]="picker" [(ngModel)]="form.duedate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+<h2>Aufgabe erstellen</h2>
+  <div class="form-group">
+    <input type="text" class="form-control" id="quest"
+           required
+           [(ngModel)]="form.quest" name="quest" #quest="ngModel">
+    <div [hidden]="quest.valid"
+         class="alert alert-danger">
+      Task is required
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success" >Submit</button>
+</form>
