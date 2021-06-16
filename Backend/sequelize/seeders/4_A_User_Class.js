@@ -25,6 +25,11 @@ module.exports = {
             updatedAt: new Date,
             userUserId: constants.userIDStudent,
             klassClassId: constants.classID
+        },{
+            createdAt: new Date,
+            updatedAt: new Date,
+            userUserId: constants.userIDTeacher,
+            klassClassId: constants.classID
         }]);
     },
 
