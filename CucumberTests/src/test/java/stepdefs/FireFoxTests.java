@@ -1,11 +1,12 @@
 package stepdefs;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FireFoxTests {
 
@@ -26,7 +27,9 @@ public class FireFoxTests {
 
     @Then(": {string} equals Page Content")
     public void equals_page_content(String response) {
-        String statusText = Preconditions.driver.findElement(By.id("response")).getText();
+        WebElement statusElement = (new WebDriverWait(Preconditions.driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.id("response")));
+        String statusText = statusElement.getText();
         Assert.assertEquals(response,statusText);
     }
 

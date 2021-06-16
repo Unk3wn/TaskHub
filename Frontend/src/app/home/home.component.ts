@@ -14,14 +14,5 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService, private teamService: TeamService) { }
 
   ngOnInit(): void {
-    this.teamService.getAllTeams().subscribe(data => this.teams = JSON.parse((data)));
-    this.userService.getPublicContent().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
-      }
-    );
   }
 }
