@@ -1,4 +1,4 @@
-export class User {
+export class Classroom {
   class_id: string;
   classname: string;
 }

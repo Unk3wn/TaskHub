@@ -3,7 +3,7 @@ import { Router, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 //import { Alert, AlertType } from '@app/_models';
-import { Alert, AlertType } from "../../_models/alert";
+import { Alert, AlertType } from "../../_services/_models/alert";
 //import { AlertService } from '@app/_services';
 import { AlertService } from "../../_services/alert.service";
 

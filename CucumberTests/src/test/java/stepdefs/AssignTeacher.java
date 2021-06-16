@@ -1,7 +1,7 @@
 package stepdefs;
 
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class AssignTeacher {
     @When("^: I select Nico out of the DropDown Menu with the id 'teachername_input'$")
