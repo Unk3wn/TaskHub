@@ -14,6 +14,7 @@ import stepdefs.Preconditions;
 )
 
 public class RunTest {
+
     @BeforeClass
     public static void setup() {
         System.setProperty("webdriver.gecko.driver", "./resources/geckodriver.exe");
