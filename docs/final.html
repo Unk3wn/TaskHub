@@ -389,7 +389,12 @@
             <section>
                 <h2>2.2.2 Extend of functionality - Frontend</h2>
                 <ul style="list-style: none;">
-                    <li>TODO DANNY</li>
+                    <li>Component Design</li>
+                    <ol style="list-style: none">
+                        <li>➾ Easy to add new Components</li>
+                    </ol>
+                    <li>Component driven Architecture</li>
+                    <li>Interchange Components easy</li>
                 </ul>
             </section>
             <section>
@@ -483,7 +488,7 @@
                 </p>
             </section>
             <section>
-                <h2>3.5.1 Patterns - Frontend - AngularJS</h2>
+                <h2>3.5.1 Patterns - Frontend - Angular</h2>
                 AngularJS uses the following Code Patterns in it's Framework Code <br>
                 <p>
                 <ul style="alignment: center">
@@ -531,7 +536,7 @@
                     <th scope="row">Kristin</th>
                     <td>Agne</td>
                     <td>agne.kristin@student.dhbw-karlsruhe.de</td>
-                    <td style="text-align: right">~ 65</td>
+                    <td style="text-align: right">~ 85</td>
                 </tr>
                 <tr>
                     <th class="table-info" scope="row" colspan="4" style="text-align: right">Blog, Github Administration, Peer Review, Organisation</th>
@@ -540,7 +545,7 @@
                     <th scope="row">Danny</th>
                     <td>Kroll</td>
                     <td>kroll.danny@student.dhbw-karlsruhe.de</td>
-                    <td style="text-align: right">~ 57</td>
+                    <td style="text-align: right">~ 85</td>
                 </tr>
                 <tr>
                     <th class="table-info" scope="row" colspan="4" style="text-align: right">Angular Frontend, YouTrack, Project Management, Midterm Presentation</th>
@@ -549,7 +554,7 @@
                     <th scope="row">Nico</th>
                     <td>Holzhäuser</td>
                     <td>holzhaeuser.nico@student.dhbw-karlsruhe.de</td>
-                    <td style="text-align: right">~ 100</td>
+                    <td style="text-align: right">~ 110</td>
                 </tr>
                 <tr>
                     <th class="table-info" scope="row" colspan="4" style="text-align: right">Infrastructure, Backend, Docker, Database</th>
@@ -617,21 +622,20 @@
                 document.getElementById("header").innerHTML = maintainer+headOfIT+buisnessClient+clientUser;
             }
             //Troll for PDF Printing
-            if (event.indexh == 20){
+            if (event.indexh == 23){
                 document.getElementById("troll").innerHTML = 'Today for only 99,99€  and <br> your paper + ink + printer';
             }
-            if (event.indexh == 21 || event.indexh == 19){
+            if (event.indexh == 24 || event.indexh == 22){
                 document.getElementById("troll").innerHTML = "";
             }
-
             //#####################################################
-            if (event.indexh == 99){
+            if (event.indexh == 12 && event.indexv == 2 || event.indexh == 20){
                 document.getElementById("persons").innerHTML = nicoIcon;
             }
-            if (event.indexh == 99){
+            if (event.indexh == 9 || event.indexh == 16){
                 document.getElementById("persons").innerHTML = krissiIcon;
             }
-            if (event.indexh == 99){
+            if (event.indexh == 11 || event.indexh == 12 && event.indexv == 5){
                 document.getElementById("persons").innerHTML = dannyIcon;
             }
         } );
