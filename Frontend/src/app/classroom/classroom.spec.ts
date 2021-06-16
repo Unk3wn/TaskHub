@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Classroom } from './classroom';
 import {AbstractMockObservableService} from "../mocks/mock.service";
-import {ApiService} from "../Services/api.service";
+import {ApiService} from "../_services/api.service";
 
 class MockApiService extends AbstractMockObservableService {
   getClassroom(): any {

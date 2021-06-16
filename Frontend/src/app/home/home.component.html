@@ -1,7 +1,14 @@
-<div class="p-4">
-  <div class="container">
-    <h1>Hi {{user.first_name}}!</h1>
-    <p>You did you SOAB you logged in <3</p>
-    <p><a routerLink="/users">Manage Users</a></p>
-  </div>
+<div class="container">
+  <header class="jumbotron">
+    <p>{{ content }}</p>
+  </header>
 </div>
+
+<mat-form-field appearance="fill">
+  <mat-label>Teams</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let team of teams" [value]="team">
+      {{team.team_name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

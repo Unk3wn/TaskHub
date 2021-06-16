@@ -1,13 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../_services/user.service';
+import {TeamService} from '../_services/team.service';
 
-import { User } from "../_models/user";
-import { AccountService } from "../_services/account.service";
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+  content?: string;
+  teams: any[];
 
-@Component({ templateUrl: 'home.component.html' })
-export class HomeComponent {
-  user: User;
+  constructor(private userService: UserService, private teamService: TeamService) { }
 
-  constructor(private accountService: AccountService) {
-    this.user = this.accountService.userValue;
+  ngOnInit(): void {
+    this.teamService.getAllTeams().subscribe(data => this.teams = JSON.parse((data)));
+    this.userService.getPublicContent().subscribe(
+      data => {
+        this.content = data;
+      },
+      err => {
+        this.content = JSON.parse(err.error).message;
+      }
+    );
   }
 }
