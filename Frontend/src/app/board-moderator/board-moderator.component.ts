@@ -3,6 +3,7 @@ import {UserService} from '../_services/user.service';
 import {TokenStorageService} from '../_services/token-storage.service';
 import {TaskService} from '../_services/task.service';
 import {SubjectService} from '../_services/subject.service';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-board-moderator',
@@ -15,29 +16,25 @@ export class BoardModeratorComponent implements OnInit {
   currentId: string;
   firstname: string;
   lastname: string;
-  classes: any[];
+  classes: any[] = [];
   subjects: any[];
   form: any = {
-    task_id: null,
+    task_id: uuid.v4(),
     subject_id: null,
-    question: null,
-    classes: null,
+    quest: 'test',
+    myClasses: null,
     duedate: null,
   };
 
   // tslint:disable-next-line:max-line-length
+  private submitted: boolean;
+  // tslint:disable-next-line:max-line-length
+  public test: string;
+
   constructor(private userService: UserService, private token: TokenStorageService, private taskService: TaskService, private subjectService: SubjectService) {
   }
 
   ngOnInit(): void {
-    /*this.userService.getModeratorBoard().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
-      }
-    );*/
     this.currentId = this.token.getUser().user_id;
     this.userService.getUserById(this.currentId).subscribe(data => {
       this.firstname = JSON.parse(data).first_name;
@@ -48,9 +45,13 @@ export class BoardModeratorComponent implements OnInit {
       this.subjects = JSON.parse((data));
       console.log(data);
     });
+    this.test = 'test';
 
-    // this.taskService.createTask()
+  }
 
+  onSubmit(): void {
+    this.submitted = true;
+    this.taskService.createTask(this.form).subscribe(data => console.log(data));
   }
 
 }
