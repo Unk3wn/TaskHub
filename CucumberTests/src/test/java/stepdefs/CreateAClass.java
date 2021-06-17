@@ -1,5 +1,7 @@
 package stepdefs;
 
+import org.openqa.selenium.By;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,10 +27,9 @@ public class CreateAClass {
         // throw new PendingException();
     }
 
-    @When("^: I enter AbcClass into input field with the id 'classname_input'$")
-    public void i_enter_AbcClass_into_input_field_with_the_id_classname_input() throws Exception {
-        // Write code here that turns the phrase above into concrete actions
-        // throw new PendingException();
+    @When("^: I enter {string} into input field with the id 'classname_input'$")
+    public void i_enter_AbcClass_into_input_field_with_the_id_classname_input(String string) throws Exception {
+        Preconditions.driver.findElement(By.name("class")).sendKeys(string);
     }
 
     @Then("^: OK-Popup with Class created$")

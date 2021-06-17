@@ -85,6 +85,19 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "codeCoverage": true,
+            "codeCoverageExclude": [
+              "src/app/mocks/mock.service.ts",
+              "src/app/_services/alert.service.ts",
+              "src/app/_services/api.service.ts",
+              "src/app/_services/auth.service.ts",
+              "src/app/_services/class.service.ts",
+              "src/app/_services/solution.service.ts",
+              "src/app/_services/subject.service.ts",
+              "src/app/_services/task.service.ts",
+              "src/app/_services/team.service.ts",
+              "src/app/_services/token-storage.service.ts",
+              "src/app/_services/user.service.ts"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
