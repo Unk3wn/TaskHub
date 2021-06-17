@@ -1,7 +1,7 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">TaskHUB</a>
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active" >
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
       </li>
@@ -13,6 +13,9 @@
       </li>
       <li class="nav-item">
         <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      </li>
+      <li class="nav-item">
+        <a href="/task" class="nav-link" *ngIf="isLoggedIn" routerLink="task">Task</a>
       </li>
     </ul>
 
