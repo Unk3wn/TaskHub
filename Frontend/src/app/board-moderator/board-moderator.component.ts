@@ -4,6 +4,7 @@ import {TokenStorageService} from '../_services/token-storage.service';
 import {TaskService} from '../_services/task.service';
 import {SubjectService} from '../_services/subject.service';
 import * as uuid from 'uuid';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-board-moderator',
@@ -28,10 +29,8 @@ export class BoardModeratorComponent implements OnInit {
 
   // tslint:disable-next-line:max-line-length
   private submitted: boolean;
-  // tslint:disable-next-line:max-line-length
-  public test: string;
 
-  constructor(private userService: UserService, private token: TokenStorageService, private taskService: TaskService, private subjectService: SubjectService) {
+  constructor( private userService: UserService, private token: TokenStorageService, private taskService: TaskService, private subjectService: SubjectService) {
   }
 
   ngOnInit(): void {
@@ -43,15 +42,13 @@ export class BoardModeratorComponent implements OnInit {
     });
     this.subjectService.getAllSubjects().subscribe(data => {
       this.subjects = JSON.parse((data));
-      console.log(data);
     });
-    this.test = 'test';
-
+    this.form.duedate = '2021-06-15T10:48:47.551Z';
   }
 
   onSubmit(): void {
     this.submitted = true;
     this.taskService.createTask(this.form).subscribe(data => console.log(data));
+    console.log(this.form.duedate);
   }
-
 }
