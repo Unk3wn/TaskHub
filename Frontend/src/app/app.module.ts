@@ -21,6 +21,7 @@ import {BoardUserComponent} from './board-user/board-user.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { BoardTaskComponent } from './board-task/board-task.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
+    BoardTaskComponent,
   ],
   imports: [
     BrowserModule,
