@@ -31,7 +31,7 @@ export class TaskService {
     return this.http.post(API_URL + 'task/', {
       task_id: form.task_id,
       subject_id: form.subject_id,
-      question: form.question,
+      question: form.quest,
       class: form.myClasses.class_id,
       duedate: form.duedate
     }, httpOptions);

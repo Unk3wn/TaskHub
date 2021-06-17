@@ -28,7 +28,7 @@ export class BoardModeratorComponent implements OnInit {
   };
 
   // tslint:disable-next-line:max-line-length
-  private submitted: boolean;
+  submitted: boolean;
 
   constructor( private userService: UserService, private token: TokenStorageService, private taskService: TaskService, private subjectService: SubjectService) {
   }
