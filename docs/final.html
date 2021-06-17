@@ -594,13 +594,20 @@
             <button type="button" class="btn btn-primary btn-lg" onclick="print('resources/final/Handout.pdf')">Print Handout</button>
             <br>
             <p>Look at the Printing Tems on Top Right &#8599;</p>
+            <br>
+            ~ not working with <img style="width: 3%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/1200px-Firefox_logo%2C_2019.svg.png"> Sorry 😔 <br>
         </section>
     </div>
     <div class="slides" id="endslide">
         <section>
             <h1 >Hope you enjoyed our <br> Presentation ❤️</h1>
             <br>
-            <p>You can download our Handout here : <a href="https://github.com/Unk3wn/TaskHub---Codebase/blob/master/docs/resources/final/Handout.pdf">Click me!</a> </p>
+            <p>
+                Download our Handout : <a href="https://github.com/Unk3wn/TaskHub---Codebase/raw/master/docs/resources/final/Handout.pdf">Click me!</a> <br>
+                Download our Blog as a ZIP here : <a href="https://github.com/Unk3wn/TaskHub---Documentation/raw/master/documentation/Blog.zip">Click me!</a> <br>
+                Download our Documentation Repo here : <a href="https://github.com/Unk3wn/TaskHub---Documentation/archive/refs/heads/master.zip">Click me!</a> <br>
+                Download our Code Repo here : <a href="https://github.com/Unk3wn/TaskHub---Codebase/archive/refs/heads/master.zip">Click me!</a> <br>
+            </p>
             <br>
             <br>
             <p>Also feel free to look in our <a target="_blank" href="https://raw.githubusercontent.com/Unk3wn/TaskHub---Codebase/master/docs/final.html">Presentation - Sourcecode</a> and <a target="_blank" href="https://revealjs.com/">reveal.js</a></p>
@@ -624,18 +631,42 @@
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
         });
         Reveal.on( 'slidechanged', event => {
-            if(event.indexh == 6 || event.indexh < 5){
+            if(event.indexh == 6 || event.indexh < 5 || event.indexh > 19){
                 document.getElementById("header").innerHTML = "";
             }
-            if(event.indexh == 5){
+            if(event.indexh == 5 || event.indexh == 8 || event.indexh == 12 && event.indexv == 2){
                 document.getElementById("header").innerHTML = maintainer+headOfIT+buisnessClient+clientUser;
             }
+            if(event.indexh == 8 && event.indexv > 2 || event.indexh == 9 || event.indexh == 10 && event.indexv == 7 || event.indexh == 16){
+                document.getElementById("header").innerHTML = buisnessClient;
+            }
+            if(event.indexh == 10 || event.indexh == 12 && event.indexv == 3 || event.indexh == 18){
+                document.getElementById("header").innerHTML = headOfIT+buisnessClient;
+            }
+            if(event.indexh == 10 || event.indexh == 12 && event.indexv == 3 || event.indexh == 17 || event.indexh == 19){
+                document.getElementById("header").innerHTML = maintainer+headOfIT+buisnessClient;
+            }
+            if(event.indexh == 8 && event.indexv == 5){
+                document.getElementById("header").innerHTML = clientUser;
+            }
+            if(event.indexh == 11){
+                document.getElementById("header").innerHTML = maintainer+headOfIT;
+            }
+            if(event.indexh == 15){
+                document.getElementById("header").innerHTML = maintainer+buisnessClient;
+            }
+            //#####################################################
             //Troll for PDF Printing
             if (event.indexh == 23){
                 document.getElementById("troll").innerHTML = 'Today for only 99,99€  and <br> your paper + ink + printer';
             }
             if (event.indexh == 24 || event.indexh == 22){
                 document.getElementById("troll").innerHTML = "";
+            }
+            //#####################################################
+            //Ending Handout
+            if (event.indexh > 20){
+                document.getElementById("header").innerHTML = '👩‍🏫';
             }
             //#####################################################
             if (event.indexh == 12 && event.indexv == 2 || event.indexh == 20){
