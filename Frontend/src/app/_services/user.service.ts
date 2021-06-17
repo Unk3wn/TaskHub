@@ -31,4 +31,10 @@ export class UserService {
     return this.http.get(API_URL + '' +
       id, { responseType: 'text' });
   }
+  getAllUsers(): Observable<any> {return this.http.get(API_URL , { responseType: 'text' });
+  }
+  addClass(userId, classId): Observable<any> {
+    return this.http.post(API_URL + 'addClass/' +
+      userId + '/' + classId, { responseType: 'text' });
+  }
 }

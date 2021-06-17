@@ -1,10 +1,43 @@
+<h2>Erstelle eine Klasse</h2>
 <div class="form-group">
   <input
     [(ngModel)]="classname"
     required
     minlength="2"
     maxlength="20"
-    name="class"
- />
-  <button (click)="onSubmit()">Create Class</button>
+ /></div>
+  <button type="submit" class="btn btn-success" (click)="onSubmit()">Klasse erstellen</button>
+
+<div class="alert alert-success" *ngIf="submitted" id="response">
+  Klasse wurde erstellt.
+</div>
+<div class="form-group">
+  <h2>Wähle einen User</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>User</mat-label>
+    <mat-select class="form-control" id="user"
+                required
+                [(ngModel)]="form.userId" name="user">
+      <mat-option *ngFor="let user of users" [value]="user.user_id">
+        {{user.username}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="form-group">
+  <h2>Wähle eine Klasse</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Klasse</mat-label>
+    <mat-select class="form-control" id="class"
+                required
+                [(ngModel)]="form.classId" name="class">
+      <mat-option *ngFor="let myclass of myClasses" [value]="myclass.class_id">
+        {{myclass.classname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<button type="submit" class="btn btn-success" (click)="addToClass()">Klasse zuweisen</button>
+<div class="alert alert-success" *ngIf="added" id="response">
+  User wurde der Klasse hinzugefügt.
 </div>
