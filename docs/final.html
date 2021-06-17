@@ -69,7 +69,7 @@
     <script>
         let maintainer = "&#128295;"; // 🔧
         let headOfIT = "&#128081;"; // 👑
-        let buisnessClient = "&#128188;"; // 💼
+        let businessClient = "&#128188;"; // 💼
         let clientUser = "&#128118;"; // 👶
 
         let krissiIcon = "&#128024;"; // 🐘
@@ -191,7 +191,7 @@
             <ul style="list-style-type: none">
                 <li><script>document.write(maintainer)</script> &#8594; Maintaining our Code</li>
                 <li><script>document.write(headOfIT)</script> &#8594; Head of IT</li>
-                <li><script>document.write(buisnessClient)</script> &#8594; Buisness Client</li>
+                <li><script>document.write(businessClient)</script> &#8594; Buisness Client</li>
                 <li><script>document.write(clientUser)</script> &#8594; Client User</li>
             </ul>
             </p>
@@ -640,16 +640,16 @@
                 document.getElementById("header").innerHTML = "";
             }
             if(event.indexh == 5 || event.indexh == 8 || event.indexh == 12 && event.indexv == 2){
-                document.getElementById("header").innerHTML = maintainer+headOfIT+buisnessClient+clientUser;
+                document.getElementById("header").innerHTML = maintainer+headOfIT+businessClient+clientUser;
             }
             if(event.indexh == 8 && event.indexv > 2 || event.indexh == 9 || event.indexh == 10 && event.indexv == 7 || event.indexh == 16){
-                document.getElementById("header").innerHTML = buisnessClient;
+                document.getElementById("header").innerHTML = businessClient;
             }
             if(event.indexh == 10 || event.indexh == 12 && event.indexv == 3 || event.indexh == 18){
-                document.getElementById("header").innerHTML = headOfIT+buisnessClient;
+                document.getElementById("header").innerHTML = headOfIT+businessClient;
             }
             if(event.indexh == 10 || event.indexh == 12 && event.indexv == 3 || event.indexh == 17 || event.indexh == 19){
-                document.getElementById("header").innerHTML = maintainer+headOfIT+buisnessClient;
+                document.getElementById("header").innerHTML = maintainer+headOfIT+businessClient;
             }
             if(event.indexh == 8 && event.indexv == 5){
                 document.getElementById("header").innerHTML = clientUser;
@@ -658,7 +658,7 @@
                 document.getElementById("header").innerHTML = maintainer+headOfIT;
             }
             if(event.indexh == 15){
-                document.getElementById("header").innerHTML = maintainer+buisnessClient;
+                document.getElementById("header").innerHTML = maintainer+businessClient;
             }
             //#####################################################
             //Troll for PDF Printing
